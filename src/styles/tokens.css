@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Syne:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap");
+
+:root {
+  --bg-0: #07070d;
+  --bg-1: #101018;
+  --panel: rgba(16, 16, 24, 0.82);
+  --panel-elevated: rgba(22, 22, 32, 0.92);
+  --text-main: #fff4fa;
+  --text-soft: #b4b4c8;
+  --text-muted: #8a8a9e;
+  --pink: #fe83c6;
+  --pink-strong: #fa4eab;
+  --cyan: #4de8ff;
+  --violet: #c4b5fd;
+  --line: rgba(254, 131, 198, 0.22);
+  --line-soft: rgba(255, 255, 255, 0.08);
+  --shadow: 0 20px 48px rgba(0, 0, 0, 0.48);
+  --shadow-glow: 0 0 40px rgba(250, 78, 171, 0.12);
+
+  --font-display: "Fraunces", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  --font-sans: "Syne", "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-mono: "IBM Plex Mono", "Cascadia Mono", "Consolas", monospace;
+
+  --text-xs: 0.72rem;
+  --text-sm: 0.84rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --leading-tight: 1.08;
+  --leading-normal: 1.55;
+  --leading-relaxed: 1.68;
+  --tracking-caps: 0.16em;
+  --tracking-tight: -0.025em;
+  --radius-lg: 22px;
+  --radius-md: 14px;
+  --radius-sm: 10px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+html,
+body,
+#app {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: 400;
+  line-height: var(--leading-normal);
+  color: var(--text-main);
+  background:
+    radial-gradient(ellipse 80% 50% at 10% -10%, rgba(250, 78, 171, 0.22), transparent 50%),
+    radial-gradient(ellipse 60% 40% at 95% 15%, rgba(77, 232, 255, 0.14), transparent 45%),
+    radial-gradient(ellipse 50% 35% at 50% 100%, rgba(196, 181, 253, 0.08), transparent 50%),
+    linear-gradient(168deg, var(--bg-0) 0%, var(--bg-1) 55%, #0a0a12 100%);
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.35;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 0.6px, transparent 0.6px);
+  background-size: 24px 24px;
+}
+
+#app {
+  position: relative;
+  z-index: 1;
+}
+
+::selection {
+  background: rgba(254, 131, 198, 0.35);
+  color: #fff;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-variation-settings: "SOFT" 40, "WONK" 0;
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+}

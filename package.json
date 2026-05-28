@@ -1,0 +1,23 @@
+{
+  "name": "ccwevelyn",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "sync-skill": "node scripts/build-portfolio-skill-context.mjs",
+    "dev": "npm run sync-skill && vite",
+    "build": "npm run sync-skill && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.0.2",
+    "vite": "^8.0.12"
+  },
+  "dependencies": {
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6",
+    "react-markdown": "^10.1.0",
+    "react-router-dom": "^7.15.1",
+    "remark-gfm": "^4.0.1"
+  }
+}

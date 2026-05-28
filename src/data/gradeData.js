@@ -1,0 +1,41 @@
+export const gradeRows = [
+  { year: "23/24", sem: "1", courseName: "Introduction to Computer Science and Its Application", final: 86, credit: 3 },
+  { year: "23/24", sem: "1", courseName: "Introduction to Programming", final: 87, credit: 3 },
+  { year: "23/24", sem: "1", courseName: "Constitution and Basic Law", final: 84, credit: 2 },
+  { year: "23/24", sem: "1", courseName: "Linear Algebra", final: 77, credit: 3 },
+  { year: "23/24", sem: "1", courseName: "Calculus", final: 88, credit: 3 },
+  { year: "23/24", sem: "1", courseName: "English I", final: 87, credit: 3 },
+
+  { year: "23/24", sem: "2", courseName: "Computer Organization", final: 75, credit: 3 },
+  { year: "23/24", sem: "2", courseName: "Advanced Programming", final: 59, credit: 3 },
+  { year: "23/24", sem: "2", courseName: "Introduction to E-Business", final: 82, credit: 3 },
+  { year: "23/24", sem: "2", courseName: "Chinese History and Culture", final: 78, credit: 3 },
+  { year: "23/24", sem: "2", courseName: "Discrete Mathematics", final: 88, credit: 3 },
+  { year: "23/24", sem: "2", courseName: "English II", final: 87, credit: 3 },
+
+  { year: "24/25", sem: "1", courseName: "Database Design", final: 91, credit: 3 },
+  { year: "24/25", sem: "1", courseName: "Data Structures and Algorithms", final: 85, credit: 3 },
+  { year: "24/25", sem: "1", courseName: "Operating Systems", final: 94, credit: 3 },
+  { year: "24/25", sem: "1", courseName: "Statistics", final: 88, credit: 3 },
+  { year: "24/25", sem: "1", courseName: "English III", final: 85, credit: 3 },
+  { year: "24/25", sem: "1", courseName: "Sustainable Development", final: 99, credit: 2 },
+
+  { year: "24/25", sem: "2", courseName: "Ethics and Professional Issues in Computing", final: 96, credit: 3 },
+  { year: "24/25", sem: "2", courseName: "Web Design and Development", final: 95, credit: 3 },
+  { year: "24/25", sem: "2", courseName: "Software Engineering", final: 98, credit: 3 },
+  { year: "24/25", sem: "2", courseName: "Computer Networks", final: 91, credit: 3 },
+  { year: "24/25", sem: "2", courseName: "English IV", final: 81, credit: 3 },
+
+  { year: "25/26", sem: "1", courseName: "Project Management", final: 96, credit: 3 },
+  { year: "25/26", sem: "1", courseName: "Human Factors and User Interfaces", final: 88, credit: 3 },
+  { year: "25/26", sem: "1", courseName: "Data Driven Business Management", final: 98, credit: 3 },
+  { year: "25/26", sem: "1", courseName: "Advanced Web Development", final: 91, credit: 3 },
+  { year: "25/26", sem: "1", courseName: "Science Communications", final: 95, credit: 3 },
+  { year: "25/26", sem: "1", courseName: "Risk Management in Business", final: 95, credit: 3 },
+
+  { year: "25/26", sem: "2", courseName: "Artificial Intelligence", final: 91, credit: 3 },
+  { year: "25/26", sem: "2", courseName: "Information System Project", final: 91, credit: 3 },
+  { year: "25/26", sem: "2", courseName: "Analytical Data Design and Applications", final: 93, credit: 3 },
+  { year: "25/26", sem: "2", courseName: "Data Science and Business Analytics", final: 88, credit: 3 },
+  { year: "25/26", sem: "2", courseName: "Interpersonal Relations", final: 94, credit: 3 },
+];
