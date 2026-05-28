@@ -21,9 +21,9 @@ const SKILL_DEFINITIONS = [
       "Data Driven Business Management",
       "Analytical Data Design and Applications",
       "Data Science and Business Analytics",
-      "Statistics",
       "Database Design",
       "Risk Management in Business",
+      "Ethics and Professional Issues in Computing",
     ],
     interpretation:
       "The score is grounded in data-oriented courses that require reasoning from evidence, structured modeling, and analytical decision-making.",
@@ -35,7 +35,6 @@ const SKILL_DEFINITIONS = [
       "Software Engineering",
       "Project Management",
       "Information System Project",
-      "Ethics and Professional Issues in Computing",
       "Science Communications",
     ],
     interpretation:
@@ -50,7 +49,6 @@ const SKILL_DEFINITIONS = [
       "English III",
       "English IV",
       "Interpersonal Relations",
-      "Human Factors and User Interfaces",
     ],
     interpretation:
       "This dimension covers language fluency, interpersonal communication, and presenting ideas clearly in academic and team settings.",
@@ -76,12 +74,9 @@ const SKILL_DEFINITIONS = [
       "Linear Algebra",
       "Discrete Mathematics",
       "Statistics",
-      "Data Structures and Algorithms",
-      "Computer Organization",
-      "Advanced Programming",
     ],
     interpretation:
-      "The score comes from mathematically grounded subjects, representing current foundational strength rather than product-oriented performance.",
+      "Computational ability is scored from core mathematics and discrete-math coursework—not computer organization, advanced programming, or data structures and algorithms.",
   },
 ];
 

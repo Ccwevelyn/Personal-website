@@ -78,10 +78,6 @@ function ProjectModal({ project, onClose }) {
   const hasCarouselShots = hasScreenshots && !shotGridLayout && !videoShotsSplit;
   const shot = hasCarouselShots ? project.screenshots[shotIndex] : null;
 
-  const eatWhatShotAlts = [
-    "Eat-What: nearby restaurant list, location, distance slider, and Pick one",
-  ];
-
   const tabs = isEnglishVocab
     ? [
         { id: "intro", label: "Project introduction" },
@@ -331,11 +327,7 @@ function ProjectModal({ project, onClose }) {
                         <img
                           key={src}
                           src={src}
-                          alt={
-                            project.id === "eat-what"
-                              ? eatWhatShotAlts[index] ?? `${project.title} screenshot ${index + 1}`
-                              : `${project.title} screenshot ${index + 1}`
-                          }
+                          alt={`${project.title} screenshot ${index + 1}`}
                           loading="lazy"
                         />
                       ))}

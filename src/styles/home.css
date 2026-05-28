@@ -1008,17 +1008,6 @@ html.has-site-cursor * {
   color: var(--text-soft);
 }
 
-.portfolio-modal-media {
-  margin-top: 0.9rem;
-  display: grid;
-  gap: 0.8rem;
-  grid-template-columns: 1.35fr 1fr;
-}
-
-.portfolio-modal-media.video-only {
-  grid-template-columns: 1fr;
-}
-
 .portfolio-modal-video {
   border: 1px solid rgba(254, 131, 198, 0.25);
   border-radius: 12px;
@@ -2230,10 +2219,6 @@ html.has-site-cursor * {
     grid-template-columns: 1fr;
   }
 
-  .portfolio-modal-media {
-    grid-template-columns: 1fr;
-  }
-
   .home-page,
   .portfolio-page {
     width: min(1120px, calc(100% - 1rem));
@@ -2368,10 +2353,6 @@ html.has-site-cursor * {
 
   .portfolio-tutorial-iframe {
     min-height: 52vh;
-  }
-
-  .portfolio-modal-media:not(.video-only) {
-    grid-template-columns: 1fr;
   }
 
   .chart-wrap {

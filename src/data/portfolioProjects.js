@@ -16,12 +16,10 @@ export const PROJECT_SECTIONS = [
         id: "silence-love",
         title: "Silence Love",
         format: "TouchDesigner / MediaPipe Gesture Control",
-        mediaMode: "video-only",
         focus: "Hand-gesture interaction · emotion beyond sound",
         summary:
           "Multilingual \"I love you\" flows into a live sign-language gesture—recognized in real time with MediaPipe and expressed without voice.",
         video: "/portfolio/videos/Video_2.mp4",
-        screenshots: [],
         details: `"I love you" appears across different languages, written in diverse scripts and forms. These expressions gradually gather, forming a shared field of meaning beyond any single voice.
 
 The piece is driven by hand-gesture control: MediaPipe tracks the performer's hands and maps movement to the visual narrative in TouchDesigner. The climax is the sign for "I love you" in sign language—recognized as gesture input, not spoken audio.
@@ -34,12 +32,10 @@ It is not spoken, yet it is fully understood.`,
         id: "rainbow-ribbon",
         title: "Rainbow Ribbon (Audio Reactive)",
         format: "TouchDesigner / Audio Reactive",
-        mediaMode: "video-only",
         focus: "Creative coding foundation",
         summary:
           "My first TouchDesigner piece. A ribbon responds to music dynamics, marking the beginning of my creative-technology journey.",
         video: "/portfolio/videos/rainbow_ribbon.mp4",
-        screenshots: [],
         details: `This is my first TouchDesigner piece — a rainbow ribbon that ripples and dances in response to music, its movement shaped entirely by the rise and fall of the sound itself.
 
 I know this work looks very beginner-level, but because it is my first creation, it carries a special meaning for me, so I decided to place it here.
@@ -62,7 +58,6 @@ even the simplest components, when pieced together again and again, can burst in
         summary:
           "A mobile app that helps users learn English vocabulary through image recognition, translation, and text-to-speech feedback.",
         video: "/portfolio/videos/English_learning.mp4",
-        mediaMode: "video-only",
         modalType: "english-vocab",
         details:
           "A mobile app built with Expo that helps users learn English vocabulary through image recognition using Google Vision API, translation, and text-to-speech features.",
