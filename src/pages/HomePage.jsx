@@ -4,6 +4,7 @@ import { PortfolioButton } from "../components/PortfolioButton";
 import { SkillMatrix } from "../components/SkillMatrix";
 import { WeightTrendChart } from "../components/WeightTrendChart";
 import { gradeRows } from "../data/gradeData";
+import { readChatApiJson, resolveChatApiUrl } from "../lib/chatApi";
 
 function EvelynChat() {
   const [messages, setMessages] = useState([
@@ -35,7 +36,7 @@ function EvelynChat() {
     setIsSending(true);
 
     try {
-      const response = await fetch("/api/evelyn-chat", {
+      const response = await fetch(resolveChatApiUrl(), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -43,10 +44,10 @@ function EvelynChat() {
           history: nextMessages.map((msg) => ({ role: msg.role, text: msg.text })),
         }),
       });
-      const data = await response.json();
+      const data = await readChatApiJson(response);
       const replyText = response.ok
         ? data.reply
-        : `Connection error: ${data.error || "Unable to get response from API."}`;
+        : data.error || "Unable to get response from API.";
       setMessages((prev) => [
         ...prev,
         {
