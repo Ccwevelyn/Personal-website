@@ -156,10 +156,8 @@ export function SkillMatrix() {
         <p className="eyebrow">Capability Matrix</p>
         <h2 id="matrix-title">Capability Radar</h2>
         <p className="skill-scoring-note">
-          Scores come from related coursework; open a point for the courses and grades behind it.
-          I learn fast from data, finish work on my own when I can, and work fine in teams. Xiaomi
-          and Bologna both pushed me to check whether a tool result is actually usable before I
-          trust it.
+          Scores come from related coursework. Hover a dimension on the radar and the matching
+          courses will show up.
         </p>
       </div>
       <div className="radar-layout">

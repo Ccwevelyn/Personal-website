@@ -72,7 +72,8 @@ Use this when visitors ask about background, Xiaomi internship, why CS, further 
 - Why CS lead (site): questions 1–3 → three concrete reasons on the page. Question 4 (ethics / what stays mine) motivates deep study because I want to grow into someone who can help set ethical rules; it is not listed as a Why-CS reason because that aim is still too macro / not concrete enough.
 - Hero arc (site): product first (data + sympathy → projects people can use); further CS / Human-Centered AI study is how I grow depth to make those products with more care.
 - Three things I want to build (site; aligned with home Research Interests): emotion understanding & healing; effort-saving assistive arm for delivery workers (real-time posture adaptation); agency-preserving Agent/Skill. Memory-presence card not on this page.
-- Assistive interest (site): assistive mechanical arm for delivery workers who lift heavy loads; real-time posture adaptation to cut effort under real constraints.
+- Assistive interest (home): short direction only — cut physical effort under real limits. Concrete delivery-worker arm stays on Research Purpose builds, not on the home interest blurb.
+- Home Research Interests: one short line per thread; tags kept non-overlapping (affective/multimodal; assistive robotics/embodied; HCI/AI safety).
 - Ocean-and-net view still applies when talking about judgment, ethics, and resonance.
 - Shared home: Human-Centered AI — affective computing, HCI, multimodal sensing, wearable computing, assistive robotics, adaptive intelligent systems. Prefer suitable support/feedback/intervention after understanding state over score-chasing alone.
 - Also: unpublished LLM gender-bias probe under three constraints; FYP leaning medical image analysis with ethic thread (“good synthetic quality” vs real downstream value); multi-agent debater draft taught me ideas ≠ literature-ready research.

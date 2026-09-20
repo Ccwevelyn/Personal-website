@@ -520,6 +520,16 @@ html.has-site-cursor * {
   color: var(--text-soft);
 }
 
+.research-panel:not(.research-panel-detail) > .research-lead {
+  max-width: none;
+}
+
+@media (min-width: 860px) {
+  .research-panel:not(.research-panel-detail) > .research-lead {
+    white-space: nowrap;
+  }
+}
+
 .research-traits {
   margin: 0.9rem 0 0;
   padding: 0;
@@ -1477,13 +1487,18 @@ html.has-site-cursor * {
 }
 
 .growth-metrics-gpa {
-  --metric-chip-w: 10.5rem;
-  grid-template-columns: repeat(2, minmax(var(--metric-chip-w), 1fr));
-  justify-content: start;
+  width: 100%;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  justify-content: stretch;
+  gap: 0.65rem;
 }
 
 .growth-metrics-gpa article {
+  width: 100%;
+  min-width: 0;
   max-width: none;
+  margin: 0;
+  padding-inline: 0.85rem;
 }
 
 .growth-metrics article {
@@ -3334,8 +3349,15 @@ html.has-site-cursor * {
   }
 
   .growth-metrics-gpa {
-    --metric-chip-w: 9.5rem;
+    width: 100%;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .growth-metrics-gpa article {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    margin: 0;
   }
 
   .growth-metrics article {
