@@ -122,12 +122,12 @@ export function ExperiencePanel() {
             </p>
             <p className="beyond-body">
               Mentoring pushed me to build Been There Notes: I put my own course notes up, and
-              others can upload theirs too. The aim is mutual help for paths I already walked,
-              so beginners hit fewer of the same walls. The site also has a contact email if
-              someone gets stuck on schoolwork or university life and wants to ask.
+              others can upload theirs too. The aim is mutual help for paths I already walked, so
+              beginners hit fewer of the same walls. The site also has a contact email if someone
+              gets stuck on schoolwork or university life and wants to ask.
             </p>
             <p className="beyond-stat">
-              <span>1,000+</span> views · reached a lot of people
+              <span>1,000+</span> views
             </p>
           </article>
 
@@ -140,9 +140,8 @@ export function ExperiencePanel() {
               on purpose.
             </p>
             <p className="beyond-body beyond-body-emphasis">
-              I later want to grow this into systems that can read emotion and offer a bit of
-              relief. That sits in my interest area: affective computing, and how conversation can
-              carry care.
+              I want to grow this toward systems that can read emotion and offer a bit of relief.
+              That is why I care about affective computing, and how conversation can carry care.
             </p>
           </article>
         </div>

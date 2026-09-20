@@ -4,12 +4,14 @@ export function ResearchInterests() {
       <div className="second-screen-header">
         <p className="eyebrow">Direction</p>
         <h2 id="research-title">Research Interests</h2>
-        <p className="research-kicker">Towards Human-Centric AI</p>
+        <p className="research-kicker">Towards Human-Centered AI</p>
       </div>
 
       <p className="research-lead">
         I care about systems that read a person&apos;s state first, then decide whether support,
-        feedback, or intervention makes sense. Model scores matter, but they are not the whole goal.
+        feedback, or intervention makes sense. Model scores matter; they are not the whole goal.
+        These three threads are also how I want to grow the skill to ship products that stay useful
+        in real work and daily life.
       </p>
 
       <ul className="research-threads">
@@ -26,18 +28,18 @@ export function ResearchInterests() {
         <li>
           <h3>Assistive &amp; Embodied Support</h3>
           <p>
-            Help with real load and posture: assistance that cuts effort when people lift, move, or
-            recover under limits.
+            An assistive arm for delivery workers who lift heavy loads: adapt to posture in real
+            time so the system actually cuts effort under real constraints.
           </p>
           <p className="research-tags">
-            assistive robotics · wearable computing · adaptive systems
+            assistive robotics · wearable computing · adaptive systems · posture
           </p>
         </li>
         <li>
           <h3>Human-Agency AI Interaction</h3>
           <p>
             Build agents and skills that guide thinking while the person stays in charge, with clear
-            boundaries and ethical judgment.
+            boundaries.
           </p>
           <p className="research-tags">
             HCI · human-centered AI reasoning · AI safety · model behavior

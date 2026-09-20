@@ -156,13 +156,10 @@ export function SkillMatrix() {
         <p className="eyebrow">Capability Matrix</p>
         <h2 id="matrix-title">Capability Radar</h2>
         <p className="skill-scoring-note">
-          Self-evaluation: I combine sharp data insight with fast learning, execute independently
-          with high efficiency, and collaborate and lead smoothly in team settings. I stay
-          resilient under challenge, bring overseas exchange experience and an engineering mindset,
-          and keep user needs at the center when designing lightweight, inclusive, and ethically
-          aware solutions. With a formal computer science background and product perspective, I use
-          AI tools to empower real industries and explore the expanding possibilities of human-AI
-          collaboration.
+          Scores come from related coursework; open a point for the courses and grades behind it.
+          I learn fast from data, finish work on my own when I can, and work fine in teams. Xiaomi
+          and Bologna both pushed me to check whether a tool result is actually usable before I
+          trust it.
         </p>
       </div>
       <div className="radar-layout">

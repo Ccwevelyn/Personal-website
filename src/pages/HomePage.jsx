@@ -2,6 +2,7 @@ import { useState } from "react";
 import { GrowthTrendChart } from "../components/GrowthTrendChart";
 import { ExperienceButton } from "../components/ExperienceButton";
 import { PortfolioButton } from "../components/PortfolioButton";
+import { ResearchButton } from "../components/ResearchButton";
 import { ResearchInterests } from "../components/ResearchInterests";
 import { SkillMatrix } from "../components/SkillMatrix";
 import { WeightTrendChart } from "../components/WeightTrendChart";
@@ -14,7 +15,7 @@ function EvelynChat() {
       id: "init-assistant",
       role: "assistant",
       name: "Evelyn",
-      text: "Hi, I'm Evelyn. This chat runs on my personal cc-skill: it loads how I think, my background, and how I talk (distilled from dot-skill). Ask me anything if you want to get to know me.",
+      text: "Hi, I'm Evelyn. This chat uses my personal notes on how I think and talk. Ask me anything if you want to get to know me.",
     },
   ]);
   const [input, setInput] = useState("");
@@ -78,7 +79,7 @@ function EvelynChat() {
     <div className="chat-shell" aria-label="Evelyn skill chat">
       <p className="eyebrow">Evelyn Live Chat</p>
       <p className="chat-skill-note">
-        Personal cc-skill: my ideas and data, in my voice (distilled from dot-skill)
+        Chat runs on my personal notes and voice
       </p>
       <div className="chat-thread" role="log" aria-live="polite">
         {messages.map((message) => (
@@ -116,26 +117,23 @@ export function HomePage() {
       <section className="hero-section panel">
         <div className="hero-grid">
           <div className="hero-intro">
-            <p className="hero-kicker">Design + Data + Humanity</p>
+            <p className="hero-kicker">Growth · Wide imagination · Compassion</p>
             <h1>
               <span className="hero-name">CUI CONGWEN · EVELYN</span>
               <span className="hero-tagline">
-                I use data and empathy to turn messy problems into products people can use
+                I use data and sympathy to turn massive problems into projects people can use
               </span>
             </h1>
             <p className="hero-desc">
-              I look for real pain points in evidence, then design solutions that stay light and
-              ethical, and get them shipped. I pick up new domains quickly and try to turn that into
-              work teammates can rely on.
+              I started with a product habit: find real pain, then ship something people can use.
+              Among trade-offs I look for the lightest path that still works. I study Computer
+              Science to get sharper at those trade-offs, and to find where AI can actually help
+              people when humans and models work together.
             </p>
-            <ul className="hero-highlights" aria-label="Core strengths">
-              <li>Find problems from evidence</li>
-              <li>Keep solutions light and ethical</li>
-              <li>Learn across domains and ship</li>
-            </ul>
             <div className="hero-actions">
               <PortfolioButton />
               <ExperienceButton />
+              <ResearchButton />
             </div>
           </div>
           <figure className="hero-portrait-wrap">
