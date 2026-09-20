@@ -410,10 +410,9 @@ export function PortfolioPage() {
     <main className="portfolio-page">
       <header className="portfolio-header">
         <p className="eyebrow">Portfolio</p>
-        <h1>Creative Works by Evelyn, Recreated from My Original Site</h1>
+        <h1>Selected Works</h1>
         <p>
-          Project videos, README documentation, tutorial PDFs, screenshots, and full descriptions
-          are preserved from my previous website.
+          Project videos, README documentation, tutorial PDFs, screenshots, and full descriptions.
         </p>
         <Link to="/" className="text-link">
           ← Back to Home

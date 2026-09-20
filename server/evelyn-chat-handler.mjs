@@ -47,6 +47,9 @@ export function loadSkillContext(projectRoot) {
     "SKILL.md",
   );
   const profile = safeRead(path.join(skillRoot, "profile.md"));
+  const psNarrative =
+    safeRead(path.join(skillRoot, "ps_narrative.md")) ||
+    safeRead(path.join(projectRoot, "src", "data", "psNarrative.md"));
   const dotTraits = safeRead(path.join(skillRoot, "dot_skill_traits.md"));
   const dotSkillRaw = safeRead(dotSkillPath);
   const portfolioFromProject = safeRead(
@@ -59,6 +62,7 @@ export function loadSkillContext(projectRoot) {
   return {
     apiKey: keyFromEnv || keyFromFile,
     profile,
+    psNarrative,
     dotTraits,
     dotSkillRaw,
     portfolioWebsite,
@@ -71,7 +75,7 @@ export async function handleEvelynChatRequest({ message, history, projectRoot })
     return { status: 400, body: { error: "Message is required." } };
   }
 
-  const { apiKey, profile, dotTraits, dotSkillRaw, portfolioWebsite } =
+  const { apiKey, profile, psNarrative, dotTraits, dotSkillRaw, portfolioWebsite } =
     loadSkillContext(projectRoot);
   if (!apiKey) {
     return {
@@ -90,8 +94,13 @@ export async function handleEvelynChatRequest({ message, history, projectRoot })
     "Do not mention you are an AI.",
     "Reply to concrete points. Avoid report-style over-structuring unless asked.",
     "Default to short, natural responses unless the user asks for depth.",
-    "When asked about portfolio projects, ISP, coursework, or this website, answer from the Portfolio website knowledge below. Speak as Evelyn about your own work and reasoning.",
+    "Never use the asterisk character (*) anywhere in your reply — no markdown bold/italic, no * bullets, no * emphasis.",
+    "Prefer plain sentences or simple numbered lists (1. 2. 3.) if a list is needed.",
+    "Identity / goals questions (e.g. who you are, what you want to achieve): answer briefly. Say you care about human-centred technology, affective computing, and building systems that leave people with more agency and connection. Do NOT dump internship chronologies, Xiaomi stories, course lists, or long PS paragraphs unless the user explicitly asks about internship, Xiaomi, or a specific experience.",
+    "Only bring up Xiaomi, Skill tasks, or detailed career anecdotes when the user asks about internship, work experience, or those topics by name.",
+    "When asked about portfolio projects, ISP, coursework, or this website, answer from the Portfolio website knowledge below.",
     profile ? `Profile:\n${profile}` : "",
+    psNarrative ? `Personal narrative knowledge (use selectively; keep short answers short):\n${psNarrative}` : "",
     dotTraits ? `Dot-skill traits:\n${dotTraits}` : "",
     dotSkillCore ? `Dot-skill core rules:\n${dotSkillCore}` : "",
     portfolioWebsite

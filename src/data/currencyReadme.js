@@ -24,10 +24,10 @@ In addition, the query page also has the following functions.
  * **Historical query record**
 <br>The query records that record the user history, note, do not contain the results of quick queries`;
 
-export const CURRENCY_SPECIAL_THOUGHTS = `You may notice that other projects on my website only include a brief video introducing their functions. However, for this website I created this page to share some of my personal ideals. One of the key differences between this website and others is that it does not rely on AI.
+export const CURRENCY_SPECIAL_THOUGHTS = `Most projects on this site only show a short demo video. For this one I wanted space for why I built it. Unlike many of my later projects, this site does not use AI.
 
-I built this website during the first semester of my sophomore year, aiming to pass the school's selection process for the summer program. The requirement was to complete a currency exchange website. At that time, I spent two months learning everything from scratch—starting with basic HTML, CSS, and JavaScript—and then developed this site.
+I made it in the first semester of sophomore year for a summer-program selection. The brief was a currency exchange website. I spent about two months learning HTML, CSS, and JavaScript from scratch, then built the site.
 
-This project holds special meaning for me. Even though AI is now highly advanced and widely used, I believe it should be seen as a tool to enhance efficiency, not as a substitute for fundamental learning. We cannot bypass the basics and jump directly into AI-based development. That is why I emphasize this website today: in an era dominated by AI, this project represents my commitment to mastering the fundamentals and building a strong foundation.
+I keep it here on purpose. AI is useful for speed, but I still think you need the basics first. Skipping fundamentals and jumping straight into AI tools is a habit I do not want.
 
-This website is actually quite simple. It doesn't use any advanced frameworks, and some of its functions might just be basic features stacked together without a clear user target. However, it represents my original intention when I first started learning computer science. That's why it holds extraordinary significance to me.`;
+The site itself is simple: no fancy frameworks, and some features are just basic pieces stacked together without a sharp user target. That is fine. It marks where I started in CS, so it stays.`;

@@ -7,13 +7,13 @@ A **local-first** smart planning web app:
 
 # Why this project
 
-Many people stall at the same step: the goal stays vague, but putting it on a daily calendar is painful.  
-You split steps, estimate time, set priorities, keep adjusting—and procrastination wins.
+Many people stall at the same step: the goal stays vague, but putting it on a daily calendar is painful.
+You split steps, estimate time, set priorities, keep adjusting, and procrastination wins.
 
-My Plan closes the loop: **AI planning + calendar execution in one place**—not advice-only, not calendar-only.
+My Plan puts AI planning and calendar execution in one place. It is not advice-only, and not calendar-only.
 
-- Typical tools: good at *recording* or *thinking*;  
-- **My Plan**: AI **thinks one step ahead for you**, then lands the result on the calendar.
+- Typical tools: good at *recording* or *thinking*;
+- **My Plan**: AI asks the next useful question, then lands the result on the calendar.
 
 ---
 
@@ -44,20 +44,20 @@ My Plan closes the loop: **AI planning + calendar execution in one place**—not
 
 # How AI saves you effort (example: weight loss)
 
-1. AI collects basics first (e.g. height, current weight)—not a random target.  
+1. AI collects basics first (e.g. height, current weight), not a random target.  
 2. Suggests a healthier range using constraints such as BMI.  
 3. Back-solves duration, weekly rhythm, and task intensity.  
-4. Writes selections into the calendar so **thinking → doing** has less friction.
+4. Writes selections into the calendar so thinking to doing has less friction.
 
-AI does not replace you—it **reduces decision cost** and turns planning into actions you can run today.
+AI does not replace you. It cuts decision cost and turns planning into actions you can run today.
 
 ---
 
 # Highlights
 
-* **General goals**: study, weight loss, social skills, open-ended plans—same pipeline.  
-* **AI always thinks one step ahead** before long advice dumps.  
-* **Checklist-oriented output** — not vague motivation text.  
+* **General goals**: study, weight loss, social skills, open-ended plans, same pipeline.  
+* **AI asks one useful question at a time** before long advice dumps.  
+* **Checklist-oriented output**, not vague motivation text.  
 * **Weekly items get time slots** before they hit the calendar.  
 * **Bilingual consistency** (中文 / EN).  
 * **Resilience**: request timeouts, JSON fallbacks, routing (study / weight / social / relationships).

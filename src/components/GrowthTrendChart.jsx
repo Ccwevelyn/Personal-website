@@ -4,6 +4,14 @@ function fmt(value) {
   return value == null ? "-" : value.toFixed(2);
 }
 
+/** Official summary metrics for the growth panel (not recomputed from per-term chips). */
+const GPA_SUMMARY = {
+  lowest: 2.9,
+  current: 3.53,
+  highest: 3.9,
+  ranking: "6/49",
+};
+
 export function GrowthTrendChart({ rows, embedded = false }) {
   const trend = buildTermTrend(rows).filter((item) => item.value != null);
   const width = 700;
@@ -19,32 +27,24 @@ export function GrowthTrendChart({ rows, embedded = false }) {
   const y = (v) => pad.top + ((max - v) / (max - min)) * innerH;
   const points = trend.map((item, idx) => `${x(idx)},${y(item.value)}`).join(" ");
 
-  const low = trend.reduce(
-    (acc, item) => (item.value < acc.value ? item : acc),
-    trend[0] ?? { term: "-", value: 0 },
-  );
-  const latest = trend[trend.length - 1];
-  const delta = latest ? latest.value - low.value : 0;
-
   const content = (
     <>
       <div className="second-screen-header">
         <p className="eyebrow">Growth Trend</p>
         <h2 id="growth-title">Academic Growth Curve (GPA)</h2>
+        <p className="growth-ranking">Ranking · {GPA_SUMMARY.ranking}</p>
       </div>
 
-      <div className="growth-metrics growth-metrics-inline">
-        <article>
-          <p>Lowest</p>
-          <strong>{fmt(low.value)}</strong>
-        </article>
+      <div className="growth-metrics growth-metrics-inline growth-metrics-gpa" aria-label="GPA summary">
         <article>
           <p>Current</p>
-          <strong>{fmt(latest?.value)}</strong>
+          <strong>{fmt(GPA_SUMMARY.current)}</strong>
         </article>
         <article>
-          <p>Net Gain</p>
-          <strong>+{fmt(delta)}</strong>
+          <p>Rise</p>
+          <strong>
+            {fmt(GPA_SUMMARY.lowest)} → {fmt(GPA_SUMMARY.highest)}
+          </strong>
         </article>
       </div>
 

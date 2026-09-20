@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { GrowthTrendChart } from "../components/GrowthTrendChart";
+import { ExperienceButton } from "../components/ExperienceButton";
 import { PortfolioButton } from "../components/PortfolioButton";
+import { ResearchInterests } from "../components/ResearchInterests";
 import { SkillMatrix } from "../components/SkillMatrix";
 import { WeightTrendChart } from "../components/WeightTrendChart";
 import { gradeRows } from "../data/gradeData";
@@ -12,7 +14,7 @@ function EvelynChat() {
       id: "init-assistant",
       role: "assistant",
       name: "Evelyn",
-      text: "Hi, I'm Evelyn. This chatbot is powered by my personal cc-skill—it injects my thoughts, background, and how I actually talk (distilled from dot-skill). Ask me anything here if you'd like to get to know me.",
+      text: "Hi, I'm Evelyn. This chat runs on my personal cc-skill: it loads how I think, my background, and how I talk (distilled from dot-skill). Ask me anything if you want to get to know me.",
     },
   ]);
   const [input, setInput] = useState("");
@@ -76,7 +78,7 @@ function EvelynChat() {
     <div className="chat-shell" aria-label="Evelyn skill chat">
       <p className="eyebrow">Evelyn Live Chat</p>
       <p className="chat-skill-note">
-        Personal cc-skill: my ideas and data, in my voice — distilled from dot-skill
+        Personal cc-skill: my ideas and data, in my voice (distilled from dot-skill)
       </p>
       <div className="chat-thread" role="log" aria-live="polite">
         {messages.map((message) => (
@@ -118,27 +120,28 @@ export function HomePage() {
             <h1>
               <span className="hero-name">CUI CONGWEN · EVELYN</span>
               <span className="hero-tagline">
-                Turning ambiguous problems into practical products with data and empathy
+                I use data and empathy to turn messy problems into products people can use
               </span>
             </h1>
             <p className="hero-desc">
-              I identify real user pain points from evidence, design lightweight and ethical
-              solutions, and ship them into clear product outcomes. I learn fast across disciplines and
-              turn that learning into execution quality teams can trust.
+              I look for real pain points in evidence, then design solutions that stay light and
+              ethical, and get them shipped. I pick up new domains quickly and try to turn that into
+              work teammates can rely on.
             </p>
             <ul className="hero-highlights" aria-label="Core strengths">
-              <li>Data-informed problem discovery</li>
-              <li>Ethical, lightweight product thinking</li>
-              <li>Cross-domain learning and execution</li>
+              <li>Find problems from evidence</li>
+              <li>Keep solutions light and ethical</li>
+              <li>Learn across domains and ship</li>
             </ul>
             <div className="hero-actions">
               <PortfolioButton />
+              <ExperienceButton />
             </div>
           </div>
           <figure className="hero-portrait-wrap">
             <img
               src="/evelyn-portrait.png"
-              alt="Evelyn — cartoon-stylized from my own photo"
+              alt="Evelyn, cartoon-stylized from my own photo"
               className="hero-portrait"
             />
             <figcaption className="hero-portrait-caption">
@@ -147,6 +150,8 @@ export function HomePage() {
           </figure>
         </div>
       </section>
+
+      <ResearchInterests />
 
       <section className="insight-grid" aria-label="Growth and capability insights">
         <section className="panel growth-panel trend-combined-panel" aria-label="Dual trend curves">
@@ -165,6 +170,7 @@ export function HomePage() {
             <p>
               <span>Email</span>
               <a href="mailto:ccwevelyncambridge@outlook.com">ccwevelyncambridge@outlook.com</a>
+              <a href="mailto:evelyn.cui2027@outlook.com">evelyn.cui2027@outlook.com</a>
             </p>
             <p>
               <span>Phone</span>

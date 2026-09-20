@@ -12,7 +12,7 @@ const SKILL_DEFINITIONS = [
       "Artificial Intelligence",
     ],
     interpretation:
-      "This dimension is evaluated through courses focused on creating new interfaces, applying novel technical ideas, and translating concepts into product-facing design.",
+      "Scored from courses where we built interfaces, tried new technical ideas, and turned concepts into product-facing design.",
   },
   {
     key: "analysis",
@@ -26,7 +26,7 @@ const SKILL_DEFINITIONS = [
       "Ethics and Professional Issues in Computing",
     ],
     interpretation:
-      "The score is grounded in data-oriented courses that require reasoning from evidence, structured modeling, and analytical decision-making.",
+      "Scored from data courses that ask you to reason from evidence, build models, and make decisions from analysis.",
   },
   {
     key: "documentation",
@@ -38,7 +38,7 @@ const SKILL_DEFINITIONS = [
       "Science Communications",
     ],
     interpretation:
-      "Documentation reflects coursework and projects where structured writing, specifications, reports, and traceable deliverables were core assessment criteria.",
+      "Scored from coursework and projects where specs, reports, and other written deliverables were a real part of the grade.",
   },
   {
     key: "communication",
@@ -51,7 +51,7 @@ const SKILL_DEFINITIONS = [
       "Interpersonal Relations",
     ],
     interpretation:
-      "This dimension covers language fluency, interpersonal communication, and presenting ideas clearly in academic and team settings.",
+      "Covers language fluency, talking with people, and presenting ideas clearly in class and in teams.",
   },
   {
     key: "programming",
@@ -64,7 +64,7 @@ const SKILL_DEFINITIONS = [
       "Database Design",
     ],
     interpretation:
-      "Programming focuses on applied coding coursework—building and shipping software in projects—rather than systems theory, architecture, or AI survey modules.",
+      "Focused on applied coding courses where we built software in projects, not systems theory or AI survey modules.",
   },
   {
     key: "math",
@@ -76,7 +76,7 @@ const SKILL_DEFINITIONS = [
       "Statistics",
     ],
     interpretation:
-      "Computational ability is scored from core mathematics and discrete-math coursework—not computer organization, advanced programming, or data structures and algorithms.",
+      "Scored from core math and discrete math, not computer organization, advanced programming, or data structures and algorithms.",
   },
 ];
 

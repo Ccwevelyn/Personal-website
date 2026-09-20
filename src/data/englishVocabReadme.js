@@ -1,6 +1,6 @@
 export const ENGLISH_VOCAB_README_MARKDOWN = `# Vocab App - English Vocabulary Learning
 
-A mobile app built with Expo that helps users learn English vocabulary through image recognition using Google Vision API, translation, and text-to-speech features.
+A mobile app built with Expo for learning English vocabulary. It uses Google Vision for image recognition, then translation and text-to-speech.
 
 ## Features
 
@@ -71,6 +71,6 @@ vocab-app/
 `;
 
 export const ENGLISH_VOCAB_TUTORIAL_INTRO =
-  "This project is one where I serve as a tutor, guiding my junior students. Below is the instruction document.";
+  "I wrote this tutorial while mentoring juniors on Image-Based English Vocabulary Learning App. Guiding them is also what later pushed me to build my notes site: many students could not name the problem clearly, so I wanted leftover paths of mine to help a little.";
 
 export const ENGLISH_VOCAB_TUTORIAL_PDF = "/docs/year-2-mini-project.pdf";
