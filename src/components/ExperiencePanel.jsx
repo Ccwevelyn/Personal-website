@@ -1,7 +1,7 @@
 const INTERNSHIPS = [
   {
     id: "xiaomi",
-    org: "Beijing Xiaomi Software Co., Ltd.",
+    org: "A major Beijing tech & internet company (Fortune Global 300 · China Top 100)",
     date: "Jul 2026 to Aug 2026",
     role: "Algorithm Engineer Intern",
     bullets: [
@@ -13,7 +13,7 @@ const INTERNSHIPS = [
   },
   {
     id: "dcn",
-    org: "Beijing DCN Orthopaedic Hospital",
+    org: "A Beijing hospital",
     date: "May 2025 to Jul 2025",
     role: "Software Development & Testing Intern",
     bullets: [
@@ -24,7 +24,7 @@ const INTERNSHIPS = [
   },
   {
     id: "telecom",
-    org: "Beijing Telecom Planning and Design Institute Co., Ltd.",
+    org: "A Beijing telecom planning institute under a major telecom group (Fortune Global 300 · China Top 100)",
     date: "Jun 2024 to Aug 2024",
     role: "Smart Campus Project Team Intern",
     bullets: [
@@ -64,7 +64,12 @@ export function ExperiencePanel() {
       </div>
 
       <div className="experience-block">
-        <h2 className="experience-block-title">Internships</h2>
+        <h2 className="experience-block-title">
+          Internships{" "}
+          <span className="experience-privacy-note">
+            (employer names anonymized to protect confidential details)
+          </span>
+        </h2>
         <ol className="internship-timeline" aria-label="Internship timeline">
           {INTERNSHIPS.map((job, index) => (
             <li key={job.id} className="timeline-item" style={{ "--i": index }}>

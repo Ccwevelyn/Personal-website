@@ -139,11 +139,11 @@ export function HomePage() {
           <figure className="hero-portrait-wrap">
             <img
               src="/evelyn-portrait.png"
-              alt="Evelyn, cartoon-stylized from my own photo"
+              alt="Evelyn — stylized portrait"
               className="hero-portrait"
             />
             <figcaption className="hero-portrait-caption">
-              My photo, cartoon-stylized
+              Stylized me
             </figcaption>
           </figure>
         </div>

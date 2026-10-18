@@ -5,99 +5,12 @@ import {
 } from "./englishVocabReadme.js";
 import { CURRENCY_README_MARKDOWN, CURRENCY_SPECIAL_THOUGHTS } from "./currencyReadme.js";
 import { MY_PLAN_README_MARKDOWN } from "./myPlanReadme.js";
+import { PENDING_SECTION } from "./portfolioPending.js";
 
-export const PROJECT_SECTIONS = [
-  {
-    title: "HCI & TouchDesigner",
-    subtitle: "Creative Desktop",
-    accentClass: "portfolio-block-pink",
-    projects: [
-      {
-        id: "silence-love",
-        title: "Silence Love",
-        format: "TouchDesigner / MediaPipe Gesture Control",
-        focus: "Hand-gesture interaction · emotion beyond sound",
-        summary:
-          "Multilingual \"I love you\" lines gather into a live sign-language gesture, read in real time with MediaPipe and shown without voice.",
-        video: "/portfolio/videos/Video_2.mp4",
-        details: `"I love you" shows up in many languages and scripts. In the piece those phrases gather into one shared visual field.
-
-MediaPipe tracks the performer's hands and drives the TouchDesigner visuals. The climax is the sign-language "I love you" gesture, read as input instead of speech.
-
-I wanted a version of that sentence you can see without hearing it.`,
-      },
-      {
-        id: "rainbow-ribbon",
-        title: "Rainbow Ribbon (Audio Reactive)",
-        format: "TouchDesigner / Audio Reactive",
-        focus: "Creative coding foundation",
-        summary:
-          "My first TouchDesigner piece: a ribbon that moves with the music. I keep it as a starting point, not as a polished demo.",
-        video: "/portfolio/videos/rainbow_ribbon.mp4",
-        details: `This is my first TouchDesigner piece: a rainbow ribbon that moves with the music.
-
-It looks beginner-level, and it is. I still keep it here because it was my starting point.
-
-What I care about is simpler: small parts, stacked carefully, can still make something that feels warm.`,
-      },    ],
-  },
-  {
-    title: "For Mobile",
-    subtitle: "WeChat / App",
-    accentClass: "portfolio-block-cyan",
-    projects: [
-      {
-        id: "english-vocab",
-        title: "Image-Based English Vocabulary Learning App",
-        format: "Expo / Google Vision API",
-        focus: "Image learning + translation + TTS",
-        summary:
-          "Expo app for learning English words from photos: Google Vision for recognition, plus translation and text-to-speech.",
-        video: "/portfolio/videos/English_learning.mp4",
-        modalType: "english-vocab",
-        details:
-          "An Expo mobile app for English vocabulary. You photograph an object, Google Vision reads the word, then the app translates and speaks it aloud.",
-        readmeMarkdown: ENGLISH_VOCAB_README_MARKDOWN,
-        tutorialIntro: ENGLISH_VOCAB_TUTORIAL_INTRO,
-        tutorialPdf: ENGLISH_VOCAB_TUTORIAL_PDF,
-        screenshotFigures: [
-          {
-            src: "/portfolio/screenshots/english-vocab-camera.png",
-            alt: "Camera Recognition: ready state, live camera, and detected words with translation and pronunciation",
-            caption: "Camera · recognition flow",
-          },
-          {
-            src: "/portfolio/screenshots/english-vocab-wordbook.png",
-            alt: "My Wordbook: filters, search, difficulty tags, and word cards",
-            caption: "Wordbook · search, filters, and saved words",
-          },
-        ],
-      },
-      {
-        id: "eat-what",
-        title: "Eat-What Mini Program",
-        format: "WeChat Mini Program / Gaode Maps (Amap) API",
-        focus: "Decision support for daily life",
-        summary:
-          "Built for a daily problem: I often do not know what to eat. Nearby random picks or a cuisine wheel, then restaurants listed by distance.",
-        video: "/portfolio/videos/wechatApp.mp4",
-        mediaLayout: "video-screenshots-split",
-        screenshots: ["/portfolio/eat-what/app-screens.png"],
-        details: `"What Should I Eat Today?" comes from a very everyday problem: when mealtime comes, I still do not know what to eat.
-
-So I built a mini program that helps you decide with location and random options:
-1. Randomly pick one nearby restaurant within 1-5 km.
-2. Or spin a cuisine wheel first, then list restaurants of that cuisine by distance.
-
-Restaurant names and addresses come from the Gaode Maps (高德) nearby-search API in one request.`,
-      },
-    ],
-  },
-  {
-    title: "For Desktop",
-    subtitle: "Software / Web",
-    accentClass: "portfolio-block-violet",
-    projects: [
+const SOFTWARE_APP_GROUP = {
+  title: "Software / App",
+  accentClass: "portfolio-block-violet",
+  projects: [
       {
         id: "os-cli",
         title:
@@ -114,7 +27,7 @@ Restaurant names and addresses come from the Gaode Maps (高德) nearby-search A
       {
         id: "exchange-rate",
         title: "Exchange Rate Website",
-        format: "Frontend Fundamentals · 100% Hand-Coded",
+        format: "Frontend Fundamentals ?? 100% Hand-Coded",
         focus: "Strong baseline before AI-first workflows",
         summary:
           "Early coursework site I built by hand in HTML, CSS, and JavaScript, before I leaned on heavier tooling.",
@@ -131,7 +44,7 @@ Restaurant names and addresses come from the Gaode Maps (高德) nearby-search A
       {
         id: "my-plan",
         title: "My Plan",
-        format: "Web App / DeepSeek API · Local-First",
+        format: "Web App / DeepSeek API ?? Local-First",
         focus: "AI planning closed loop with calendar execution",
         summary:
           "Local-first planner: AI asks one gap at a time, builds daily/weekly/once checklists, and writes them to the calendar so vague goals become day-by-day tasks.",
@@ -148,13 +61,13 @@ Restaurant names and addresses come from the Gaode Maps (高德) nearby-search A
 
 You start AI Planning, answer short questions (chips or chat), review a checklist of daily, weekly, and one-off tasks, confirm weekly slots if needed, then push everything onto the month view. Today & tomorrow is for doing the work: matching daily titles merge, and each day keeps its own checkoffs. Filters like Diet and General plan help you scan. Data stays in the browser; DeepSeek runs the AI when you set a key.
 
-Flows work in 中文 and English, with timeouts and JSON fallbacks, and routes for study, weight loss, social, and relationship-style goals, not only fitness.`,
+Flows work in ???? and English, with timeouts and JSON fallbacks, and routes for study, weight loss, social, and relationship-style goals, not only fitness.`,
       },
       {
         id: "isp-online-shopping",
         title: "Information System Project: Online Shopping System",
         format: "Group Coursework / Information Systems",
-        focus: "Project Manager · Team Leader",
+        focus: "Project Manager ?? Team Leader",
         summary:
           "Led planning, task allocation, and mentor coordination, and wrote ISD docs from requirements and architecture through ER modeling and testing.",
         modalType: "isp-shopping",
@@ -169,7 +82,7 @@ The matrix below is the plan we agreed at the start. Final delivery stayed close
           imageAlt:
             "Team task allocation matrix for the online shopping system project, showing category, task, and sub-task ownership across Henry Chen, Andy Fok, Vincent, and Evelyn",
           imageCaption:
-            "Task allocation matrix · yellow cells indicate assigned owners per sub-task",
+            "Task allocation matrix ?? yellow cells indicate assigned owners per sub-task",
         },
         leadershipCommunication: {
           title: "Information Communication",
@@ -206,7 +119,7 @@ I prepared from that document, wrote down answers, and sent conclusions back to 
           narrative: `I also tried to keep people willing to do hard work: encourage them through rough weeks, remind us why the project mattered, and check in when stress was high.`,
           practices: [
             "Checked in regularly, not only on tasks, but on how people were coping with workload and deadlines",
-            "Used direct, positive language to keep momentum (“we’re close,” “this part is strong,” “let’s push through this together”)",
+            "Used direct, positive language to keep momentum (??we??re close,????this part is strong,????let??s push through this together??",
             "Recognized contributions publicly so effort felt seen",
             "Stayed approachable when someone was stuck or discouraged, so problems surfaced early",
             "Kept standards high without making the team afraid to speak up",
@@ -230,12 +143,12 @@ I prepared from that document, wrote down answers, and sent conclusions back to 
             artifacts: [
               {
                 type: "image",
-                title: "PDM — Precedence Diagram Method",
+                title: "PDM ??Precedence Diagram Method",
                 previewSrc: "/portfolio/isp/modeling/pdm-preview.png",
                 src: "/portfolio/isp/modeling/pdm.png",
                 alt: "PDM network diagram with activity IDs, durations, and early/late start-finish times for the ISP project",
                 caption:
-                  "Overview network (click to open detailed diagram with pan & zoom) — ES/EF and LS/LF",
+                  "Overview network (click to open detailed diagram with pan & zoom) ??ES/EF and LS/LF",
                 wide: true,
               },
               {
@@ -245,7 +158,7 @@ I prepared from that document, wrote down answers, and sent conclusions back to 
                 src: "/portfolio/isp/modeling/gantt.png",
                 alt: "Gantt chart with task hierarchy, timeline bars, dependencies, and team assignments for the ISP project",
                 caption:
-                  "Overview schedule (click to open detailed chart with pan & zoom) — Initiating through Deployment",
+                  "Overview schedule (click to open detailed chart with pan & zoom) ??Initiating through Deployment",
                 wide: true,
               },
             ],
@@ -290,7 +203,7 @@ I prepared from that document, wrote down answers, and sent conclusions back to 
             artifacts: [
               {
                 type: "image",
-                title: "Entity–Relationship Diagram",
+                title: "Entity?CRelationship Diagram",
                 src: "/portfolio/isp/modeling/er-diagram.png",
                 alt: "ER diagram for Products, Users, Order, Order_items, Cart_items, ProductImg, and Product_ratings",
                 caption: "Core entities, attributes, and relationships (Has, Belong, Contain, Create, Add)",
@@ -305,6 +218,102 @@ I prepared from that document, wrote down answers, and sent conclusions back to 
           },
         ],
       },
-    ],
+  ],
+};
+
+const WECHAT_APP_GROUP = {
+  title: "WeChat / App",
+  accentClass: "portfolio-block-cyan",
+  projects: [
+      {
+        id: "english-vocab",
+        title: "Image-Based English Vocabulary Learning App",
+        format: "Expo / Google Vision API",
+        focus: "Image learning + translation + TTS",
+        summary:
+          "Expo app for learning English words from photos: Google Vision for recognition, plus translation and text-to-speech.",
+        video: "/portfolio/videos/English_learning.mp4",
+        modalType: "english-vocab",
+        details:
+          "An Expo mobile app for English vocabulary. You photograph an object, Google Vision reads the word, then the app translates and speaks it aloud.",
+        readmeMarkdown: ENGLISH_VOCAB_README_MARKDOWN,
+        tutorialIntro: ENGLISH_VOCAB_TUTORIAL_INTRO,
+        tutorialPdf: ENGLISH_VOCAB_TUTORIAL_PDF,
+        screenshotFigures: [
+          {
+            src: "/portfolio/screenshots/english-vocab-camera.png",
+            alt: "Camera Recognition: ready state, live camera, and detected words with translation and pronunciation",
+            caption: "Camera ?? recognition flow",
+          },
+          {
+            src: "/portfolio/screenshots/english-vocab-wordbook.png",
+            alt: "My Wordbook: filters, search, difficulty tags, and word cards",
+            caption: "Wordbook ?? search, filters, and saved words",
+          },
+        ],
+      },
+      {
+        id: "eat-what",
+        title: "Eat-What Mini Program",
+        format: "WeChat Mini Program / Gaode Maps (Amap) API",
+        focus: "Decision support for daily life",
+        summary:
+          "Built for a daily problem: I often do not know what to eat. Nearby random picks or a cuisine wheel, then restaurants listed by distance.",
+        video: "/portfolio/videos/wechatApp.mp4",
+        mediaLayout: "video-screenshots-split",
+        screenshots: ["/portfolio/eat-what/app-screens.png"],
+        details: `"What Should I Eat Today?" comes from a very everyday problem: when mealtime comes, I still do not know what to eat.
+
+So I built a mini program that helps you decide with location and random options:
+1. Randomly pick one nearby restaurant within 1-5 km.
+2. Or spin a cuisine wheel first, then list restaurants of that cuisine by distance.
+
+Restaurant names and addresses come from the Gaode Maps (???) nearby-search API in one request.`,
+      },
+  ],
+};
+
+const HCI_TOUCHDESIGNER_GROUP = {
+  title: "HCI & TouchDesigner",
+  accentClass: "portfolio-block-pink",
+  projects: [
+      {
+        id: "silence-love",
+        title: "Silence Love",
+        format: "TouchDesigner / MediaPipe Gesture Control",
+        focus: "Hand-gesture interaction ?? emotion beyond sound",
+        summary:
+          "Multilingual \"I love you\" lines gather into a live sign-language gesture, read in real time with MediaPipe and shown without voice.",
+        video: "/portfolio/videos/Video_2.mp4",
+        details: `"I love you" shows up in many languages and scripts. In the piece those phrases gather into one shared visual field.
+
+MediaPipe tracks the performer's hands and drives the TouchDesigner visuals. The climax is the sign-language "I love you" gesture, read as input instead of speech.
+
+I wanted a version of that sentence you can see without hearing it.`,
+      },
+      {
+        id: "rainbow-ribbon",
+        title: "Rainbow Ribbon (Audio Reactive)",
+        format: "TouchDesigner / Audio Reactive",
+        focus: "Creative coding foundation",
+        summary:
+          "My first TouchDesigner piece: a ribbon that moves with the music. I keep it as a starting point, not as a polished demo.",
+        video: "/portfolio/videos/rainbow_ribbon.mp4",
+        details: `This is my first TouchDesigner piece: a rainbow ribbon that moves with the music.
+
+It looks beginner-level, and it is. I still keep it here because it was my starting point.
+
+What I care about is simpler: small parts, stacked carefully, can still make something that feels warm.`,
+      },
+  ],
+};
+
+export const PROJECT_SECTIONS = [
+  PENDING_SECTION,
+  {
+    title: "Shipped",
+    subtitle: "",
+    accentClass: "portfolio-block-shipped",
+    groups: [SOFTWARE_APP_GROUP, WECHAT_APP_GROUP, HCI_TOUCHDESIGNER_GROUP],
   },
 ];

@@ -5,165 +5,12 @@ Use it when visitors ask about projects, ISP leadership/modeling, or my views on
 
 ---
 
-# HCI & TouchDesigner (Creative Desktop)
+# Shipped
 
-## Silence Love
-Section: HCI & TouchDesigner
-ID: silence-love
-
-**Format:** TouchDesigner / MediaPipe Gesture Control
-
-**Focus:** Hand-gesture interaction · emotion beyond sound
-
-**Summary:** Multilingual "I love you" lines gather into a live sign-language gesture, read in real time with MediaPipe and shown without voice.
-
-**Details:**
-"I love you" shows up in many languages and scripts. In the piece those phrases gather into one shared visual field.
-
-MediaPipe tracks the performer's hands and drives the TouchDesigner visuals. The climax is the sign-language "I love you" gesture, read as input instead of speech.
-
-I wanted a version of that sentence you can see without hearing it.
-
-
----
-
-## Rainbow Ribbon (Audio Reactive)
-Section: HCI & TouchDesigner
-ID: rainbow-ribbon
-
-**Format:** TouchDesigner / Audio Reactive
-
-**Focus:** Creative coding foundation
-
-**Summary:** My first TouchDesigner piece: a ribbon that moves with the music. I keep it as a starting point, not as a polished demo.
-
-**Details:**
-This is my first TouchDesigner piece: a rainbow ribbon that moves with the music.
-
-It looks beginner-level, and it is. I still keep it here because it was my starting point.
-
-What I care about is simpler: small parts, stacked carefully, can still make something that feels warm.
-
-
----
-
-# For Mobile (WeChat / App)
-
-## Image-Based English Vocabulary Learning App
-Section: For Mobile
-ID: english-vocab
-
-**Format:** Expo / Google Vision API
-
-**Focus:** Image learning + translation + TTS
-
-**Summary:** Expo app for learning English words from photos: Google Vision for recognition, plus translation and text-to-speech.
-
-**Details:** An Expo mobile app for English vocabulary. You photograph an object, Google Vision reads the word, then the app translates and speaks it aloud.
-
-### README (English Vocab App)
-
-# Vocab App - English Vocabulary Learning
-
-A mobile app built with Expo for learning English vocabulary. It uses Google Vision for image recognition, then translation and text-to-speech.
-
-## Features
-
-- **Camera Recognition**: Take photos or select from gallery to identify English words and objects
-- **Translation**: Automatic translation from English to Chinese using Google Translate API
-- **Text-to-Speech**: Pronunciation playback using Google TTS API
-- **Word Management**: Save, organize, and manage learned vocabulary
-- **Categories**: Organize words into custom categories
-- **Search & Filter**: Find words quickly with search and category filters
-- **Dark/Light Theme**: Switch between themes
-- **Offline Storage**: All data stored locally using AsyncStorage
-
-## Project Structure
-
-```
-vocab-app/
-├── App.js                               # Main app component
-├── components/
-│   └── WordCard.js                      # Reusable word display component
-├── constants/
-│   ├── colors.js                        # Theme colors and styling
-│   └── strings.js                       # App text and translations
-├── hooks/
-│   └── useTheme.js                      # Theme management hook
-├── navigation/
-│   └── BottomTabs.js                    # Bottom tab navigation
-├── screens/
-│   ├── CameraScreen.js                  # Camera and image recognition
-│   ├── HomeScreen.js                    # Home dashboard
-│   ├── WordbookScreen.js                # Word management
-│   └── SettingsScreen.js                # App settings
-├── services/
-│   ├── visionService.js                 # Google Vision API integration
-│   ├── translateService.js              # Google Translate API integration
-│   └── ttsService.js                    # Google TTS API integration
-└── storage/
-    └── wordbookStorage.js               # Local data storage
-```
-
-## Usage
-
-### Taking Photos and Learning Words
-
-1. Open the app and go to the **Camera** tab
-2. Take a photo or select from gallery
-3. The app will automatically detect English words and objects
-4. View translations and listen to pronunciations
-5. Save interesting words to your wordbook
-
-### Managing Your Wordbook
-
-1. Go to the **Wordbook** tab
-2. View all your saved words
-3. Use search to find specific words
-4. Filter by categories (All, Recent, Favorites)
-5. Tap words to hear pronunciation
-6. Mark words as favorites
-7. Delete words you no longer need
-
-### Customizing Settings
-
-1. Go to the **Settings** tab
-2. Switch between light and dark themes
-3. Enable/disable notifications
-4. Configure audio and vibration settings
-5. Export/import your data
-6. Clear all data if needed
-
-
-
----
-
-## Eat-What Mini Program
-Section: For Mobile
-ID: eat-what
-
-**Format:** WeChat Mini Program / Gaode Maps (Amap) API
-
-**Focus:** Decision support for daily life
-
-**Summary:** Built for a daily problem: I often do not know what to eat. Nearby random picks or a cuisine wheel, then restaurants listed by distance.
-
-**Details:**
-"What Should I Eat Today?" comes from a very everyday problem: when mealtime comes, I still do not know what to eat.
-
-So I built a mini program that helps you decide with location and random options:
-1. Randomly pick one nearby restaurant within 1-5 km.
-2. Or spin a cuisine wheel first, then list restaurants of that cuisine by distance.
-
-Restaurant names and addresses come from the Gaode Maps (高德) nearby-search API in one request.
-
-
----
-
-# For Desktop (Software / Web)
+## Software / App
 
 ## Operating System Simulation: Interactive Command-Line Interface Implemented with Batch Files
-Section: For Desktop
+Section: Software / App
 ID: os-cli
 
 **Format:** Operating Systems Coursework
@@ -178,10 +25,10 @@ ID: os-cli
 ---
 
 ## Exchange Rate Website
-Section: For Desktop
+Section: Software / App
 ID: exchange-rate
 
-**Format:** Frontend Fundamentals · 100% Hand-Coded
+**Format:** Frontend Fundamentals ?? 100% Hand-Coded
 
 **Focus:** Strong baseline before AI-first workflows
 
@@ -238,10 +85,10 @@ The site itself is simple: no fancy frameworks, and some features are just basic
 ---
 
 ## My Plan
-Section: For Desktop
+Section: Software / App
 ID: my-plan
 
-**Format:** Web App / DeepSeek API · Local-First
+**Format:** Web App / DeepSeek API ?? Local-First
 
 **Focus:** AI planning closed loop with calendar execution
 
@@ -252,7 +99,7 @@ My Plan is for when goals stay vague and putting them on a calendar feels like b
 
 You start AI Planning, answer short questions (chips or chat), review a checklist of daily, weekly, and one-off tasks, confirm weekly slots if needed, then push everything onto the month view. Today & tomorrow is for doing the work: matching daily titles merge, and each day keeps its own checkoffs. Filters like Diet and General plan help you scan. Data stays in the browser; DeepSeek runs the AI when you set a key.
 
-Flows work in 中文 and English, with timeouts and JSON fallbacks, and routes for study, weight loss, social, and relationship-style goals, not only fitness.
+Flows work in ???? and English, with timeouts and JSON fallbacks, and routes for study, weight loss, social, and relationship-style goals, not only fitness.
 
 ### README (My Plan)
 
@@ -386,12 +233,12 @@ My_Plan/
 ---
 
 ## Information System Project: Online Shopping System
-Section: For Desktop
+Section: Software / App
 ID: isp-online-shopping
 
 **Format:** Group Coursework / Information Systems
 
-**Focus:** Project Manager · Team Leader
+**Focus:** Project Manager ?? Team Leader
 
 **Role:** Project Manager / Team Leader
 
@@ -413,7 +260,7 @@ I assigned work around what each person did best: report writing, system design,
 
 The matrix below is the plan we agreed at the start. Final delivery stayed close to it. People owned their slices instead of waiting for constant top-down instructions.
 
-*Task allocation matrix · yellow cells indicate assigned owners per sub-task*
+*Task allocation matrix ?? yellow cells indicate assigned owners per sub-task*
 
 #### Information Communication
 When teammates missed supervisor meetings, I took notes, turned feedback into action items, and put them in meeting workbooks so people who were absent could catch up.
@@ -444,7 +291,7 @@ I also tried to keep people willing to do hard work: encourage them through roug
 A team that feels supported usually ships faster and talks more honestly. I try to bring that into group projects I lead.
 
 - Checked in regularly, not only on tasks, but on how people were coping with workload and deadlines
-- Used direct, positive language to keep momentum (“we’re close,” “this part is strong,” “let’s push through this together”)
+- Used direct, positive language to keep momentum (??we??re close,????this part is strong,????let??s push through this together??
 - Recognized contributions publicly so effort felt seen
 - Stayed approachable when someone was stuck or discouraged, so problems surfaced early
 - Kept standards high without making the team afraid to speak up
@@ -452,8 +299,8 @@ A team that feels supported usually ships faster and talks more honestly. I try 
 #### Project Management
 Schedule artifacts that tied milestones, dependencies, and ownership across the project.
 
-- **PDM — Precedence Diagram Method:** Overview network (click to open detailed diagram with pan & zoom) — ES/EF and LS/LF
-- **Gantt Chart (Detailed Schedule):** Overview schedule (click to open detailed chart with pan & zoom) — Initiating through Deployment
+- **PDM ??Precedence Diagram Method:** Overview network (click to open detailed diagram with pan & zoom) ??ES/EF and LS/LF
+- **Gantt Chart (Detailed Schedule):** Overview schedule (click to open detailed chart with pan & zoom) ??Initiating through Deployment
 
 #### Requirements Analysis & Dynamic Modeling
 Activity diagram for customer and vendor swimlanes: browsing, authentication, cart, checkout, order tracking, cancellation, and vendor dashboard flows.
@@ -468,11 +315,216 @@ Three-tier architecture: HTML/CSS/JavaScript frontend, Node.js with Express back
 #### Data Modeling (ER Diagram)
 Relational schema for products, images, ratings, orders, order items, users, and cart items, with cardinality and foreign keys.
 
-- **Entity–Relationship Diagram:** Core entities, attributes, and relationships (Has, Belong, Contain, Create, Add)
+- **Entity?CRelationship Diagram:** Core entities, attributes, and relationships (Has, Belong, Contain, Create, Add)
 
 #### Testing
 Unit and integration testing in the final report, with screenshots and results mapped to functional requirements.
 
+
+
+---
+
+## WeChat / App
+
+## Image-Based English Vocabulary Learning App
+Section: WeChat / App
+ID: english-vocab
+
+**Format:** Expo / Google Vision API
+
+**Focus:** Image learning + translation + TTS
+
+**Summary:** Expo app for learning English words from photos: Google Vision for recognition, plus translation and text-to-speech.
+
+**Details:** An Expo mobile app for English vocabulary. You photograph an object, Google Vision reads the word, then the app translates and speaks it aloud.
+
+### README (English Vocab App)
+
+# Vocab App - English Vocabulary Learning
+
+A mobile app built with Expo for learning English vocabulary. It uses Google Vision for image recognition, then translation and text-to-speech.
+
+## Features
+
+- **Camera Recognition**: Take photos or select from gallery to identify English words and objects
+- **Translation**: Automatic translation from English to Chinese using Google Translate API
+- **Text-to-Speech**: Pronunciation playback using Google TTS API
+- **Word Management**: Save, organize, and manage learned vocabulary
+- **Categories**: Organize words into custom categories
+- **Search & Filter**: Find words quickly with search and category filters
+- **Dark/Light Theme**: Switch between themes
+- **Offline Storage**: All data stored locally using AsyncStorage
+
+## Project Structure
+
+```
+vocab-app/
+├── App.js                               # Main app component
+├── components/
+│   └── WordCard.js                      # Reusable word display component
+├── constants/
+│   ├── colors.js                        # Theme colors and styling
+│   └── strings.js                       # App text and translations
+├── hooks/
+│   └── useTheme.js                      # Theme management hook
+├── navigation/
+│   └── BottomTabs.js                    # Bottom tab navigation
+├── screens/
+│   ├── CameraScreen.js                  # Camera and image recognition
+│   ├── HomeScreen.js                    # Home dashboard
+│   ├── WordbookScreen.js                # Word management
+│   └── SettingsScreen.js                # App settings
+├── services/
+│   ├── visionService.js                 # Google Vision API integration
+│   ├── translateService.js              # Google Translate API integration
+│   └── ttsService.js                    # Google TTS API integration
+└── storage/
+    └── wordbookStorage.js               # Local data storage
+```
+
+## Usage
+
+### Taking Photos and Learning Words
+
+1. Open the app and go to the **Camera** tab
+2. Take a photo or select from gallery
+3. The app will automatically detect English words and objects
+4. View translations and listen to pronunciations
+5. Save interesting words to your wordbook
+
+### Managing Your Wordbook
+
+1. Go to the **Wordbook** tab
+2. View all your saved words
+3. Use search to find specific words
+4. Filter by categories (All, Recent, Favorites)
+5. Tap words to hear pronunciation
+6. Mark words as favorites
+7. Delete words you no longer need
+
+### Customizing Settings
+
+1. Go to the **Settings** tab
+2. Switch between light and dark themes
+3. Enable/disable notifications
+4. Configure audio and vibration settings
+5. Export/import your data
+6. Clear all data if needed
+
+
+
+---
+
+## Eat-What Mini Program
+Section: WeChat / App
+ID: eat-what
+
+**Format:** WeChat Mini Program / Gaode Maps (Amap) API
+
+**Focus:** Decision support for daily life
+
+**Summary:** Built for a daily problem: I often do not know what to eat. Nearby random picks or a cuisine wheel, then restaurants listed by distance.
+
+**Details:**
+"What Should I Eat Today?" comes from a very everyday problem: when mealtime comes, I still do not know what to eat.
+
+So I built a mini program that helps you decide with location and random options:
+1. Randomly pick one nearby restaurant within 1-5 km.
+2. Or spin a cuisine wheel first, then list restaurants of that cuisine by distance.
+
+Restaurant names and addresses come from the Gaode Maps (???) nearby-search API in one request.
+
+
+---
+
+## HCI & TouchDesigner
+
+## Silence Love
+Section: HCI & TouchDesigner
+ID: silence-love
+
+**Format:** TouchDesigner / MediaPipe Gesture Control
+
+**Focus:** Hand-gesture interaction ?? emotion beyond sound
+
+**Summary:** Multilingual "I love you" lines gather into a live sign-language gesture, read in real time with MediaPipe and shown without voice.
+
+**Details:**
+"I love you" shows up in many languages and scripts. In the piece those phrases gather into one shared visual field.
+
+MediaPipe tracks the performer's hands and drives the TouchDesigner visuals. The climax is the sign-language "I love you" gesture, read as input instead of speech.
+
+I wanted a version of that sentence you can see without hearing it.
+
+
+---
+
+## Rainbow Ribbon (Audio Reactive)
+Section: HCI & TouchDesigner
+ID: rainbow-ribbon
+
+**Format:** TouchDesigner / Audio Reactive
+
+**Focus:** Creative coding foundation
+
+**Summary:** My first TouchDesigner piece: a ribbon that moves with the music. I keep it as a starting point, not as a polished demo.
+
+**Details:**
+This is my first TouchDesigner piece: a rainbow ribbon that moves with the music.
+
+It looks beginner-level, and it is. I still keep it here because it was my starting point.
+
+What I care about is simpler: small parts, stacked carefully, can still make something that feels warm.
+
+
+---
+
+# Pending
+
+## Meeting in a Parallel Time
+Section: Pending
+ID: meet-parallel
+
+**Format:** Web · AI persona group chat
+
+**Focus:** Human-in-the-loop · persona learning
+
+**Summary:** A cream, minimal group chat where thirteen classmates keep talking as AI personas. You can log in as yourself. The shell runs; who replies to whom, and when, is where it stalls.
+
+**Details:**
+Meeting in a Parallel Time (Meet Parallel)
+
+Cream, minimal web UI. Thirteen classmates from a WeChat group keep talking as AI personas. Watch lets you observe; Rewrite lets you log in and take your own seat.
+
+Built so far: scraped group chats, per-person prompts, Watch/Rewrite paths, admin rebuild tools, and persona fields (active hours, habits, summary).
+
+Stuck on reply timing and who answers whom. Still want the symbiotic end state — memory that feels alive, and a room where human and AI seats blur.
+
+Repo: https://github.com/Ccwevelyn/Meet-parallel
+
+
+---
+
+## Thinking Twice
+Section: Pending
+ID: thinking-twice
+
+**Format:** Cursor Skill · decision gate
+
+**Focus:** Pause agency · make humans think again
+
+**Summary:** A local Cursor skill that pauses lightly before high-impact work when the thread still has no clear tradeoff — so I think again instead of handing the whole run to the agent.
+
+**Details:**
+Thinking Twice
+
+A Cursor skill plus small Python helpers that pause before high-impact agent work when the conversation still lacks a recorded tradeoff.
+
+Built: skill principles (read full thread, honor prior tradeoffs, mirror by default), gate/check output, optional challenge and journal scripts.
+
+Stuck: stop timing — helpful vs burdensome; when to ask vs when to draft.
+
+Open work: better stop calibration, clearer split between human decisions and AI drafting, questions that ask intent without growing into a checklist.
 
 
 ---

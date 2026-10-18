@@ -15,36 +15,62 @@ const ISP_WORKBOOKS = {
   "meeting-todo-jan13": ISP_MEETING_TODO_JAN13,
 };
 
-function ProjectSection({ title, subtitle, projects, accentClass, onOpenProject }) {
+function ProjectGrid({ projects, onOpenProject }) {
+  return (
+    <div className="portfolio-grid">
+      {projects.map((project, index) => (
+        <article
+          key={project.id}
+          className={`portfolio-card${project.pending ? " portfolio-card-pending" : ""}`}
+        >
+          <div className="portfolio-card-body">
+            <p className="portfolio-index">{String(index + 1).padStart(2, "0")}</p>
+            {project.pending ? (
+              <p className="portfolio-pending-badge">idea-in-progress</p>
+            ) : null}
+            <h3>{project.title}</h3>
+            {project.titleEn ? <p className="portfolio-title-en">{project.titleEn}</p> : null}
+            <div className="portfolio-meta">
+              <span>{project.format}</span>
+              {project.role ? <span>{project.role}</span> : null}
+            </div>
+            <p>{project.summary}</p>
+            <button
+              type="button"
+              className="portfolio-open-btn"
+              onClick={() => onOpenProject(project)}
+            >
+              Open Project Detail
+            </button>
+          </div>
+        </article>
+      ))}
+    </div>
+  );
+}
+
+function ProjectSection({ title, subtitle, projects, groups, accentClass, onOpenProject }) {
+  const hasGroups = Array.isArray(groups) && groups.length > 0;
+
   return (
     <section className={`portfolio-block ${accentClass}`} aria-label={title}>
       <div className="portfolio-block-head">
-        <p className="tag">{subtitle}</p>
+        {subtitle ? <p className="tag">{subtitle}</p> : null}
         <h2>{title}</h2>
       </div>
 
-      <div className="portfolio-grid">
-        {projects.map((project, index) => (
-          <article key={project.id} className="portfolio-card">
-            <div className="portfolio-card-body">
-              <p className="portfolio-index">{String(index + 1).padStart(2, "0")}</p>
-              <h3>{project.title}</h3>
-              <div className="portfolio-meta">
-                <span>{project.format}</span>
-                {project.role ? <span>{project.role}</span> : null}
-              </div>
-              <p>{project.summary}</p>
-              <button
-                type="button"
-                className="portfolio-open-btn"
-                onClick={() => onOpenProject(project)}
-              >
-                Open Project Detail
-              </button>
+      {hasGroups ? (
+        <div className="portfolio-groups">
+          {groups.map((group) => (
+            <div key={group.title} className={`portfolio-group ${group.accentClass ?? ""}`}>
+              <h3 className="portfolio-group-title">{group.title}</h3>
+              <ProjectGrid projects={group.projects} onOpenProject={onOpenProject} />
             </div>
-          </article>
-        ))}
-      </div>
+          ))}
+        </div>
+      ) : (
+        <ProjectGrid projects={projects ?? []} onOpenProject={onOpenProject} />
+      )}
     </section>
   );
 }
@@ -70,12 +96,22 @@ function ProjectModal({ project, onClose }) {
   const isEnglishVocab = project.modalType === "english-vocab";
   const isCurrency = project.modalType === "currency";
   const isIspShopping = project.modalType === "isp-shopping";
+  const hasStoryScroll =
+    project.mediaLayout === "story-scroll" &&
+    Array.isArray(project.storyBlocks) &&
+    project.storyBlocks.length > 0;
   const hasVideo = Boolean(project.video);
   const hasScreenshots = Array.isArray(project.screenshots) && project.screenshots.length > 0;
   const shotGridLayout = project.screenshotLayout === "grid-2x2";
+  const shotStackLayout = project.screenshotLayout === "stack-vertical";
   const videoShotsSplit =
     project.mediaLayout === "video-screenshots-split" && hasVideo && hasScreenshots;
-  const hasCarouselShots = hasScreenshots && !shotGridLayout && !videoShotsSplit;
+  const hasCarouselShots =
+    hasScreenshots &&
+    !shotGridLayout &&
+    !shotStackLayout &&
+    !videoShotsSplit &&
+    !hasStoryScroll;
   const shot = hasCarouselShots ? project.screenshots[shotIndex] : null;
 
   const tabs = isEnglishVocab
@@ -303,10 +339,39 @@ function ProjectModal({ project, onClose }) {
                     ) : null}
                   </div>
                 </section>
-              ) : project.details ? (
+              ) : hasStoryScroll ? null : project.details ? (
                 <section className="portfolio-modal-text">
-                  <h3>Full Description (Original Website Content)</h3>
+                  <h3>Full Description</h3>
                   <p>{project.details}</p>
+                </section>
+              ) : null}
+
+              {hasStoryScroll ? (
+                <section
+                  className="portfolio-modal-section portfolio-modal-story-scroll"
+                  aria-label="Project walkthrough"
+                >
+                  <div className="portfolio-story-scroll">
+                    {project.storyBlocks.map((block, index) =>
+                      block.kind === "image" ? (
+                        <figure key={`img-${index}`} className="portfolio-story-image">
+                          {block.caption ? (
+                            <figcaption>{block.caption}</figcaption>
+                          ) : null}
+                          <img
+                            src={block.src}
+                            alt={block.caption || `${project.title} screenshot ${index + 1}`}
+                            loading="lazy"
+                          />
+                        </figure>
+                      ) : (
+                        <div key={`text-${index}`} className="portfolio-story-text">
+                          {block.title ? <h3>{block.title}</h3> : null}
+                          {block.body ? <p>{block.body}</p> : null}
+                        </div>
+                      ),
+                    )}
+                  </div>
                 </section>
               ) : null}
 
@@ -343,7 +408,22 @@ function ProjectModal({ project, onClose }) {
                 </section>
               ) : null}
 
-              {hasScreenshots && shotGridLayout && !videoShotsSplit ? (
+              {hasScreenshots && shotStackLayout && !videoShotsSplit && !hasStoryScroll ? (
+                <section className="portfolio-modal-section portfolio-modal-screenshots-stack">
+                  <h3 className="portfolio-modal-section-title">Screenshots</h3>
+                  <div className="portfolio-modal-shots-stack" role="list">
+                    {project.screenshots.map((src, index) => (
+                      <figure key={src} className="portfolio-modal-shots-stack-cell" role="listitem">
+                        <img
+                          src={src}
+                          alt={`${project.title} screenshot ${index + 1}`}
+                          loading="lazy"
+                        />
+                      </figure>
+                    ))}
+                  </div>
+                </section>
+              ) : hasScreenshots && shotGridLayout && !videoShotsSplit && !hasStoryScroll ? (
                 <section className="portfolio-modal-section portfolio-modal-screenshots-grid">
                   <h3 className="portfolio-modal-section-title">Screenshots</h3>
                   <div className="portfolio-modal-shots-grid" role="list">
@@ -398,7 +478,13 @@ export function PortfolioPage() {
   const [activeProjectId, setActiveProjectId] = useState(null);
 
   const allProjects = useMemo(
-    () => PROJECT_SECTIONS.flatMap((section) => section.projects),
+    () =>
+      PROJECT_SECTIONS.flatMap((section) => {
+        if (Array.isArray(section.groups)) {
+          return section.groups.flatMap((group) => group.projects);
+        }
+        return section.projects ?? [];
+      }),
     [],
   );
   const activeProject =
@@ -412,7 +498,7 @@ export function PortfolioPage() {
         <p className="eyebrow">Portfolio</p>
         <h1>Selected Works</h1>
         <p>
-          Project videos, README documentation, tutorial PDFs, screenshots, and full descriptions.
+          Finished work under Shipped. Half-built ideas and stuck points under Pending.
         </p>
         <Link to="/" className="text-link">
           ← Back to Home
@@ -425,6 +511,7 @@ export function PortfolioPage() {
           title={section.title}
           subtitle={section.subtitle}
           projects={section.projects}
+          groups={section.groups}
           accentClass={section.accentClass}
           onOpenProject={(project) => {
             setActiveProjectId(project.id);

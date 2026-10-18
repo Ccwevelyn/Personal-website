@@ -190,8 +190,22 @@ function buildMarkdown() {
   ];
 
   for (const section of PROJECT_SECTIONS) {
-    parts.push(`# ${section.title} (${section.subtitle})`, "");
-    for (const project of section.projects) {
+    const heading = section.subtitle
+      ? `# ${section.title} (${section.subtitle})`
+      : `# ${section.title}`;
+    parts.push(heading, "");
+
+    if (Array.isArray(section.groups)) {
+      for (const group of section.groups) {
+        parts.push(`## ${group.title}`, "");
+        for (const project of group.projects) {
+          parts.push(projectToMarkdown(project, group.title), "", "---", "");
+        }
+      }
+      continue;
+    }
+
+    for (const project of section.projects ?? []) {
       parts.push(projectToMarkdown(project, section.title), "", "---", "");
     }
   }
