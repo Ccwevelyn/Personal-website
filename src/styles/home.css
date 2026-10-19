@@ -128,7 +128,8 @@ html.has-site-cursor * {
 .hero-section {
   padding: 1.35rem 1.5rem;
   position: relative;
-  overflow: hidden;
+  /* Keep visible so portrait hint isn't clipped after layout settle */
+  overflow: visible;
 }
 
 
@@ -193,12 +194,13 @@ html.has-site-cursor * {
 .hero-tagline {
   display: block;
   font-family: var(--font-sans);
-  font-size: clamp(1.05rem, 2.05vw, 1.28rem);
+  font-size: clamp(0.92rem, 1.55vw, 1.18rem);
   font-weight: 500;
-  line-height: 1.45;
+  line-height: 1.35;
   letter-spacing: 0.01em;
   color: var(--cyan);
-  max-width: 62ch;
+  max-width: none;
+  white-space: nowrap;
 }
 
 .hero-desc {
@@ -208,27 +210,6 @@ html.has-site-cursor * {
   font-size: clamp(0.92rem, 1.5vw, 1.02rem);
   font-weight: 400;
   color: var(--text-soft);
-}
-
-.hero-highlights {
-  margin: 0.65rem 0 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.38rem;
-}
-
-.hero-highlights li {
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 999px;
-  padding: 0.22rem 0.58rem;
-  font-family: var(--font-mono);
-  font-size: 0.68rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  color: rgba(255, 244, 250, 0.9);
-  background: rgba(255, 255, 255, 0.03);
 }
 
 .hero-actions {
@@ -246,48 +227,96 @@ html.has-site-cursor * {
   padding-inline: 1.15rem;
 }
 
+.hero-portrait-link {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 0.35rem;
+  transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.hero-portrait-link:hover,
+.hero-portrait-link:focus-visible {
+  transform: translateY(-3px);
+  filter: brightness(1.06);
+  outline: none;
+}
+
+.hero-portrait-link:focus-visible {
+  box-shadow: 0 0 0 2px rgba(11, 11, 17, 0.9), 0 0 0 4px rgba(254, 131, 198, 0.55);
+}
+
+.hero-tech-text {
+  width: 100%;
+  height: 4.5rem;
+  margin-top: 0;
+  color: #fe83c6;
+  pointer-events: auto;
+}
+
 .hero-portrait-wrap {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: stretch;
   justify-content: flex-end;
-  gap: 0.28rem;
-  width: clamp(112px, 14vw, 176px);
+  gap: 0.15rem;
+  width: clamp(200px, 22vw, 280px);
   flex-shrink: 0;
   margin: 0;
-  padding: 0;
-  margin-right: -0.85rem;
-  transform: translate(-2.65rem, 2.2rem);
+  padding: 0.2rem 0 0;
+  margin-right: -0.25rem;
+  transform: translate(-1.2rem, 0.6rem);
   background: transparent;
   border: none;
+  overflow: visible;
 }
 
 .hero-portrait-caption {
   align-self: stretch;
-  margin: 0;
+  margin: 0.35rem 0 0;
   width: 100%;
   max-width: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.22rem;
+  text-align: center;
+}
+
+.hero-portrait-caption-lead {
+  font-family: var(--font-sans);
+  font-size: clamp(0.78rem, 1.35vw, 0.92rem);
+  font-weight: 650;
+  line-height: 1.25;
+  letter-spacing: 0.04em;
+  color: #fff4fa;
+  text-shadow: 0 0 18px rgba(254, 131, 198, 0.35);
+}
+
+.hero-portrait-caption-hook {
   font-family: var(--font-mono);
-  font-size: 0.58rem;
+  font-size: clamp(0.62rem, 1.1vw, 0.72rem);
   font-weight: 500;
   line-height: 1.35;
-  letter-spacing: 0.04em;
-  text-align: right;
-  text-transform: none;
-  color: var(--text-muted);
-  opacity: 0.82;
+  letter-spacing: 0.02em;
+  color: #fe83c6;
+  opacity: 0.95;
 }
 
 .hero-portrait {
   width: 100%;
   height: auto;
+  max-height: clamp(120px, 18vw, 168px);
   object-fit: contain;
-  object-position: bottom left;
+  object-position: center bottom;
   display: block;
   border: none;
   border-radius: 0;
   background: transparent;
-  filter: none;
+  /* Transparent PNG + soft rim glow to sit on dark (not pure black) hero panel */
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.28))
+    drop-shadow(0 0 14px rgba(196, 120, 220, 0.22));
   box-shadow: none;
   mix-blend-mode: normal;
 }
@@ -1957,6 +1986,18 @@ html.has-site-cursor * {
   transform: translateX(-2px);
 }
 
+.research-back-nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.85rem 1.35rem;
+  margin-top: 0.15rem;
+}
+
+.research-back-nav .text-link {
+  margin-top: 0.65rem;
+}
+
 .portfolio-block {
   border: 1px solid var(--line-soft);
   border-radius: var(--radius-lg);
@@ -3459,12 +3500,9 @@ html.has-site-cursor * {
   }
 
   .hero-tagline {
-    font-size: clamp(0.98rem, 4vw, 1.12rem);
+    font-size: clamp(0.72rem, 3.2vw, 0.95rem);
     max-width: none;
-  }
-
-  .hero-highlights li {
-    font-size: 0.7rem;
+    white-space: nowrap;
   }
 
   .growth-metrics {
@@ -3556,13 +3594,20 @@ html.has-site-cursor * {
   }
 
   .hero-portrait-wrap {
-    width: 104px;
-    transform: translate(-2rem, 1.6rem);
+    width: min(42vw, 168px);
+    transform: translate(-0.6rem, 0.8rem);
   }
 
   .hero-portrait-caption {
-    max-width: 9.5rem;
-    font-size: 0.54rem;
+    max-width: 11rem;
+  }
+
+  .hero-portrait-caption-lead {
+    font-size: 0.72rem;
+  }
+
+  .hero-portrait-caption-hook {
+    font-size: 0.58rem;
   }
 
   .hero-desc,

@@ -65,9 +65,14 @@ export function ResearchPage() {
           Questions I keep asking, why they pull me toward Computer Science, and systems I want to
           grow toward.
         </p>
-        <Link to="/" className="text-link">
-          ← Back to Home
-        </Link>
+        <nav className="research-back-nav" aria-label="Page navigation">
+          <Link to="/" className="text-link">
+            ← Back to Home
+          </Link>
+          <Link to="/atelier#research" className="text-link">
+            ← Back to Atelier
+          </Link>
+        </nav>
       </header>
 
       <section className="panel research-panel research-panel-detail" aria-labelledby="research-purpose-title">

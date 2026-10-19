@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { GrowthTrendChart } from "../components/GrowthTrendChart";
 import { ExperienceButton } from "../components/ExperienceButton";
 import { PortfolioButton } from "../components/PortfolioButton";
@@ -6,6 +7,7 @@ import { ResearchButton } from "../components/ResearchButton";
 import { ResearchInterests } from "../components/ResearchInterests";
 import { SkillMatrix } from "../components/SkillMatrix";
 import { WeightTrendChart } from "../components/WeightTrendChart";
+import TechText from "../components/TechText";
 import { gradeRows } from "../data/gradeData";
 import { readChatApiJson, resolveChatApiUrl } from "../lib/chatApi";
 
@@ -125,10 +127,9 @@ export function HomePage() {
               </span>
             </h1>
             <p className="hero-desc">
-              I started with a product habit: find real pain, then ship something people can use.
-              Among trade-offs I look for the lightest path that still works. I study Computer
-              Science to get sharper at those trade-offs, and to find where AI can actually help
-              people when humans and models work together.
+              I care how people and systems decide. Agents, medical imaging, accessibility, and
+              fatigue sensing keep showing me the hard part sits between human needs and system
+              limits. I study CS to build tools people can trust and use.
             </p>
             <div className="hero-actions">
               <PortfolioButton />
@@ -137,13 +138,36 @@ export function HomePage() {
             </div>
           </div>
           <figure className="hero-portrait-wrap">
-            <img
-              src="/evelyn-portrait.png"
-              alt="Evelyn — stylized portrait"
-              className="hero-portrait"
-            />
+            <Link
+              to="/atelier"
+              className="hero-portrait-link"
+              aria-label="Open interactive experience — click me"
+            >
+              <img
+                src="/evelyn-portrait.png?v=3"
+                alt="Evelyn — stylized portrait pointing down"
+                className="hero-portrait"
+              />
+              <div className="hero-tech-text">
+                <TechText
+                  text="Click me"
+                  fontSize={64}
+                  fontWeight={700}
+                  color="#fff4fa"
+                  accentColor="#fe83c6"
+                  draggable={false}
+                  labels={false}
+                  speed={1.1}
+                  specks={14}
+                  letterSpacing={-0.04}
+                />
+              </div>
+            </Link>
             <figcaption className="hero-portrait-caption">
-              Stylized me
+              <span className="hero-portrait-caption-lead">Unlock interactive Evelyn</span>
+              <span className="hero-portrait-caption-hook">
+                Skip = miss Black Friday + Cyber Monday + Prime Day
+              </span>
             </figcaption>
           </figure>
         </div>

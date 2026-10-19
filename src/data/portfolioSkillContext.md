@@ -5,6 +5,56 @@ Use it when visitors ask about projects, ISP leadership/modeling, or my views on
 
 ---
 
+# Pending
+
+## Meeting in a Parallel Time
+Section: Pending
+ID: meet-parallel
+
+**Format:** Web · AI persona group chat
+
+**Focus:** Human-in-the-loop · persona learning
+
+**Summary:** A cream, minimal group chat where thirteen classmates keep talking as AI personas. In Rewrite you speak as yourself; those lines are stored in your persona and steer how the AI talks for that seat later. The hard part is reply choice: in real life there is often no tidy rule for who answers whom.
+
+**Details:**
+Meeting in a Parallel Time (Meet Parallel)
+
+Cream, minimal web UI. Thirteen classmates from a WeChat group keep talking as AI personas. Watch lets you observe; Rewrite lets you log in and take your own seat.
+
+When you speak in Rewrite, those lines are saved into that person’s persona. Rebuild / character summaries pull them into the next prompts, so the AI’s later speech for that seat follows your real wording and habits, not only the original scrape.
+
+Stuck problem: there is often no objective rule for who replies to whom. Preference and “I tend to answer this person after their message” sit outside simple online-hour stats. That is closer to conversation structure modeling and participant responsivity than to a scheduling script. Until that layer is better, the group chat feels off.
+
+Repo: https://github.com/Ccwevelyn/Meet-parallel
+
+
+---
+
+## Thinking Twice
+Section: Pending
+ID: thinking-twice
+
+**Format:** Cursor Skill · decision gate
+
+**Focus:** Pause agency · make humans think again
+
+**Summary:** Built because full agent autonomy made me lose the plot. It should pause only when a high-impact step needs my tradeoff — and the open problem is that stop timing is still wrong too often.
+
+**Details:**
+Thinking Twice
+
+Why it exists: full agent runs left me unsure what was happening. I want pauses that force a tradeoff into the open before high-impact work, not an agent that decides for me.
+
+What runs: read the full thread; honor an existing tradeoff; mirror by default; ask one short question only when high-impact work is about to run and context still has no why.
+
+Problem now: interrupt timing. Wrong stops feel like burden; missing stops let the agent runaway. Separating “ask the human” from “just draft” is the open work.
+
+Open work: better stop calibration; clearer split between human decisions and AI drafting; questions that ask intent without growing into a checklist.
+
+
+---
+
 # Shipped
 
 ## Software / App
@@ -28,7 +78,7 @@ ID: os-cli
 Section: Software / App
 ID: exchange-rate
 
-**Format:** Frontend Fundamentals ?? 100% Hand-Coded
+**Format:** Frontend Fundamentals · 100% Hand-Coded
 
 **Focus:** Strong baseline before AI-first workflows
 
@@ -88,7 +138,7 @@ The site itself is simple: no fancy frameworks, and some features are just basic
 Section: Software / App
 ID: my-plan
 
-**Format:** Web App / DeepSeek API ?? Local-First
+**Format:** Web App / DeepSeek API · Local-First
 
 **Focus:** AI planning closed loop with calendar execution
 
@@ -99,7 +149,7 @@ My Plan is for when goals stay vague and putting them on a calendar feels like b
 
 You start AI Planning, answer short questions (chips or chat), review a checklist of daily, weekly, and one-off tasks, confirm weekly slots if needed, then push everything onto the month view. Today & tomorrow is for doing the work: matching daily titles merge, and each day keeps its own checkoffs. Filters like Diet and General plan help you scan. Data stays in the browser; DeepSeek runs the AI when you set a key.
 
-Flows work in ???? and English, with timeouts and JSON fallbacks, and routes for study, weight loss, social, and relationship-style goals, not only fitness.
+Flows work in 中文 and English, with timeouts and JSON fallbacks, and routes for study, weight loss, social, and relationship-style goals, not only fitness.
 
 ### README (My Plan)
 
@@ -238,7 +288,7 @@ ID: isp-online-shopping
 
 **Format:** Group Coursework / Information Systems
 
-**Focus:** Project Manager ?? Team Leader
+**Focus:** Project Manager · Team Leader
 
 **Role:** Project Manager / Team Leader
 
@@ -260,7 +310,7 @@ I assigned work around what each person did best: report writing, system design,
 
 The matrix below is the plan we agreed at the start. Final delivery stayed close to it. People owned their slices instead of waiting for constant top-down instructions.
 
-*Task allocation matrix ?? yellow cells indicate assigned owners per sub-task*
+*Task allocation matrix — yellow cells indicate assigned owners per sub-task*
 
 #### Information Communication
 When teammates missed supervisor meetings, I took notes, turned feedback into action items, and put them in meeting workbooks so people who were absent could catch up.
@@ -291,7 +341,7 @@ I also tried to keep people willing to do hard work: encourage them through roug
 A team that feels supported usually ships faster and talks more honestly. I try to bring that into group projects I lead.
 
 - Checked in regularly, not only on tasks, but on how people were coping with workload and deadlines
-- Used direct, positive language to keep momentum (??we??re close,????this part is strong,????let??s push through this together??
+- Used direct, positive language to keep momentum (“we're close,” “this part is strong,” “let's push through this together”)
 - Recognized contributions publicly so effort felt seen
 - Stayed approachable when someone was stuck or discouraged, so problems surfaced early
 - Kept standards high without making the team afraid to speak up
@@ -299,8 +349,8 @@ A team that feels supported usually ships faster and talks more honestly. I try 
 #### Project Management
 Schedule artifacts that tied milestones, dependencies, and ownership across the project.
 
-- **PDM ??Precedence Diagram Method:** Overview network (click to open detailed diagram with pan & zoom) ??ES/EF and LS/LF
-- **Gantt Chart (Detailed Schedule):** Overview schedule (click to open detailed chart with pan & zoom) ??Initiating through Deployment
+- **PDM — Precedence Diagram Method:** Overview network (click to open detailed diagram with pan & zoom) — ES/EF and LS/LF
+- **Gantt Chart (Detailed Schedule):** Overview schedule (click to open detailed chart with pan & zoom) — Initiating through Deployment
 
 #### Requirements Analysis & Dynamic Modeling
 Activity diagram for customer and vendor swimlanes: browsing, authentication, cart, checkout, order tracking, cancellation, and vendor dashboard flows.
@@ -432,7 +482,7 @@ So I built a mini program that helps you decide with location and random options
 1. Randomly pick one nearby restaurant within 1-5 km.
 2. Or spin a cuisine wheel first, then list restaurants of that cuisine by distance.
 
-Restaurant names and addresses come from the Gaode Maps (???) nearby-search API in one request.
+Restaurant names and addresses come from the Gaode Maps (高德) nearby-search API in one request.
 
 
 ---
@@ -445,7 +495,7 @@ ID: silence-love
 
 **Format:** TouchDesigner / MediaPipe Gesture Control
 
-**Focus:** Hand-gesture interaction ?? emotion beyond sound
+**Focus:** Hand-gesture interaction — emotion beyond sound
 
 **Summary:** Multilingual "I love you" lines gather into a live sign-language gesture, read in real time with MediaPipe and shown without voice.
 
@@ -475,56 +525,6 @@ This is my first TouchDesigner piece: a rainbow ribbon that moves with the music
 It looks beginner-level, and it is. I still keep it here because it was my starting point.
 
 What I care about is simpler: small parts, stacked carefully, can still make something that feels warm.
-
-
----
-
-# Pending
-
-## Meeting in a Parallel Time
-Section: Pending
-ID: meet-parallel
-
-**Format:** Web · AI persona group chat
-
-**Focus:** Human-in-the-loop · persona learning
-
-**Summary:** A cream, minimal group chat where thirteen classmates keep talking as AI personas. You can log in as yourself. The shell runs; who replies to whom, and when, is where it stalls.
-
-**Details:**
-Meeting in a Parallel Time (Meet Parallel)
-
-Cream, minimal web UI. Thirteen classmates from a WeChat group keep talking as AI personas. Watch lets you observe; Rewrite lets you log in and take your own seat.
-
-Built so far: scraped group chats, per-person prompts, Watch/Rewrite paths, admin rebuild tools, and persona fields (active hours, habits, summary).
-
-Stuck on reply timing and who answers whom. Still want the symbiotic end state — memory that feels alive, and a room where human and AI seats blur.
-
-Repo: https://github.com/Ccwevelyn/Meet-parallel
-
-
----
-
-## Thinking Twice
-Section: Pending
-ID: thinking-twice
-
-**Format:** Cursor Skill · decision gate
-
-**Focus:** Pause agency · make humans think again
-
-**Summary:** A local Cursor skill that pauses lightly before high-impact work when the thread still has no clear tradeoff — so I think again instead of handing the whole run to the agent.
-
-**Details:**
-Thinking Twice
-
-A Cursor skill plus small Python helpers that pause before high-impact agent work when the conversation still lacks a recorded tradeoff.
-
-Built: skill principles (read full thread, honor prior tradeoffs, mirror by default), gate/check output, optional challenge and journal scripts.
-
-Stuck: stop timing — helpful vs burdensome; when to ask vs when to draft.
-
-Open work: better stop calibration, clearer split between human decisions and AI drafting, questions that ask intent without growing into a checklist.
 
 
 ---

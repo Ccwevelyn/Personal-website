@@ -27,7 +27,7 @@ const SOFTWARE_APP_GROUP = {
       {
         id: "exchange-rate",
         title: "Exchange Rate Website",
-        format: "Frontend Fundamentals ?? 100% Hand-Coded",
+        format: "Frontend Fundamentals · 100% Hand-Coded",
         focus: "Strong baseline before AI-first workflows",
         summary:
           "Early coursework site I built by hand in HTML, CSS, and JavaScript, before I leaned on heavier tooling.",
@@ -44,7 +44,7 @@ const SOFTWARE_APP_GROUP = {
       {
         id: "my-plan",
         title: "My Plan",
-        format: "Web App / DeepSeek API ?? Local-First",
+        format: "Web App / DeepSeek API · Local-First",
         focus: "AI planning closed loop with calendar execution",
         summary:
           "Local-first planner: AI asks one gap at a time, builds daily/weekly/once checklists, and writes them to the calendar so vague goals become day-by-day tasks.",
@@ -61,13 +61,13 @@ const SOFTWARE_APP_GROUP = {
 
 You start AI Planning, answer short questions (chips or chat), review a checklist of daily, weekly, and one-off tasks, confirm weekly slots if needed, then push everything onto the month view. Today & tomorrow is for doing the work: matching daily titles merge, and each day keeps its own checkoffs. Filters like Diet and General plan help you scan. Data stays in the browser; DeepSeek runs the AI when you set a key.
 
-Flows work in ???? and English, with timeouts and JSON fallbacks, and routes for study, weight loss, social, and relationship-style goals, not only fitness.`,
+Flows work in 中文 and English, with timeouts and JSON fallbacks, and routes for study, weight loss, social, and relationship-style goals, not only fitness.`,
       },
       {
         id: "isp-online-shopping",
         title: "Information System Project: Online Shopping System",
         format: "Group Coursework / Information Systems",
-        focus: "Project Manager ?? Team Leader",
+        focus: "Project Manager · Team Leader",
         summary:
           "Led planning, task allocation, and mentor coordination, and wrote ISD docs from requirements and architecture through ER modeling and testing.",
         modalType: "isp-shopping",
@@ -82,7 +82,7 @@ The matrix below is the plan we agreed at the start. Final delivery stayed close
           imageAlt:
             "Team task allocation matrix for the online shopping system project, showing category, task, and sub-task ownership across Henry Chen, Andy Fok, Vincent, and Evelyn",
           imageCaption:
-            "Task allocation matrix ?? yellow cells indicate assigned owners per sub-task",
+            "Task allocation matrix — yellow cells indicate assigned owners per sub-task",
         },
         leadershipCommunication: {
           title: "Information Communication",
@@ -119,7 +119,7 @@ I prepared from that document, wrote down answers, and sent conclusions back to 
           narrative: `I also tried to keep people willing to do hard work: encourage them through rough weeks, remind us why the project mattered, and check in when stress was high.`,
           practices: [
             "Checked in regularly, not only on tasks, but on how people were coping with workload and deadlines",
-            "Used direct, positive language to keep momentum (??we??re close,????this part is strong,????let??s push through this together??",
+            "Used direct, positive language to keep momentum (“we're close,” “this part is strong,” “let's push through this together”)",
             "Recognized contributions publicly so effort felt seen",
             "Stayed approachable when someone was stuck or discouraged, so problems surfaced early",
             "Kept standards high without making the team afraid to speak up",
@@ -143,12 +143,12 @@ I prepared from that document, wrote down answers, and sent conclusions back to 
             artifacts: [
               {
                 type: "image",
-                title: "PDM ??Precedence Diagram Method",
+                title: "PDM — Precedence Diagram Method",
                 previewSrc: "/portfolio/isp/modeling/pdm-preview.png",
                 src: "/portfolio/isp/modeling/pdm.png",
                 alt: "PDM network diagram with activity IDs, durations, and early/late start-finish times for the ISP project",
                 caption:
-                  "Overview network (click to open detailed diagram with pan & zoom) ??ES/EF and LS/LF",
+                  "Overview network (click to open detailed diagram with pan & zoom) — ES/EF and LS/LF",
                 wide: true,
               },
               {
@@ -158,7 +158,7 @@ I prepared from that document, wrote down answers, and sent conclusions back to 
                 src: "/portfolio/isp/modeling/gantt.png",
                 alt: "Gantt chart with task hierarchy, timeline bars, dependencies, and team assignments for the ISP project",
                 caption:
-                  "Overview schedule (click to open detailed chart with pan & zoom) ??Initiating through Deployment",
+                  "Overview schedule (click to open detailed chart with pan & zoom) — Initiating through Deployment",
                 wide: true,
               },
             ],
@@ -243,12 +243,12 @@ const WECHAT_APP_GROUP = {
           {
             src: "/portfolio/screenshots/english-vocab-camera.png",
             alt: "Camera Recognition: ready state, live camera, and detected words with translation and pronunciation",
-            caption: "Camera ?? recognition flow",
+            caption: "Camera — recognition flow",
           },
           {
             src: "/portfolio/screenshots/english-vocab-wordbook.png",
             alt: "My Wordbook: filters, search, difficulty tags, and word cards",
-            caption: "Wordbook ?? search, filters, and saved words",
+            caption: "Wordbook — search, filters, and saved words",
           },
         ],
       },
@@ -268,7 +268,7 @@ So I built a mini program that helps you decide with location and random options
 1. Randomly pick one nearby restaurant within 1-5 km.
 2. Or spin a cuisine wheel first, then list restaurants of that cuisine by distance.
 
-Restaurant names and addresses come from the Gaode Maps (???) nearby-search API in one request.`,
+Restaurant names and addresses come from the Gaode Maps (高德) nearby-search API in one request.`,
       },
   ],
 };
@@ -281,7 +281,7 @@ const HCI_TOUCHDESIGNER_GROUP = {
         id: "silence-love",
         title: "Silence Love",
         format: "TouchDesigner / MediaPipe Gesture Control",
-        focus: "Hand-gesture interaction ?? emotion beyond sound",
+        focus: "Hand-gesture interaction — emotion beyond sound",
         summary:
           "Multilingual \"I love you\" lines gather into a live sign-language gesture, read in real time with MediaPipe and shown without voice.",
         video: "/portfolio/videos/Video_2.mp4",
