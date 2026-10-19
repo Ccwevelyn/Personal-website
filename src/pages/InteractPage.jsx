@@ -74,12 +74,9 @@ export function InteractPage() {
   const [lanyardOpen, setLanyardOpen] = useState(false);
 
   useEffect(() => {
-    const previous = document.title;
-    document.title = "Evelyn — Interactive";
     document.documentElement.classList.add("interact-mode");
     document.body.classList.add("interact-mode");
     return () => {
-      document.title = previous;
       document.documentElement.classList.remove("interact-mode");
       document.body.classList.remove("interact-mode");
     };
@@ -156,8 +153,15 @@ export function InteractPage() {
         <ButterflyField />
 
         <div className="interact-about-inner">
-          <FadeIn as="h2" className="interact-section-heading" delay={0} y={40}>
-            Who I am
+          <FadeIn
+            as="h2"
+            className="interact-section-heading interact-about-heading"
+            delay={0}
+            y={40}
+          >
+            <span>Who</span>
+            <span>I</span>
+            <span>am</span>
           </FadeIn>
           <div className="interact-about-copy">
             <AnimatedText text="I am fascinated by how people and intelligent systems make decisions. Through projects in AI agents, medical imaging, accessibility, and fatigue sensing, I have learned that the hardest problems are rarely technical alone. They emerge when human needs, evidence, and system constraints point in different directions. I study Computer Science to better understand those trade-offs and to build intelligent systems that people can trust, understand, and genuinely benefit from." />

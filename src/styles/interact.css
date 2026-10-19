@@ -321,7 +321,7 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 5rem clamp(1.25rem, 4vw, 2.5rem);
   overflow: hidden;
   background: #000000;
@@ -332,11 +332,12 @@
   z-index: 3;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: clamp(2.5rem, 6vw, 5rem);
-  text-align: center;
-  max-width: 720px;
-  padding: 1.5rem 1.25rem;
+  text-align: left;
+  width: min(640px, calc(100% - min(36vw, 380px) - 1.5rem));
+  margin-left: clamp(1.25rem, 9vw, 6.5rem);
+  padding: 1.5rem 0;
   border-radius: 0;
   background: transparent;
   backdrop-filter: none;
@@ -347,8 +348,23 @@
   text-align: center;
 }
 
+.interact-about .interact-section-heading {
+  text-align: left;
+}
+
+.interact-about-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: clamp(0.55rem, 2.8vw, 1.65rem);
+}
+
 .interact-about-copy {
   max-width: 560px;
+}
+
+.interact-about .interact-contact-btn {
+  align-self: flex-start;
 }
 
 .interact-animated-text {
