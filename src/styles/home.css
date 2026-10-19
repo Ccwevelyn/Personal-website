@@ -1811,6 +1811,46 @@ html.has-site-cursor * {
   color: #bdf8ff;
 }
 
+.contact-panel a.contact-image-link {
+  position: relative;
+  display: inline-block;
+  align-self: center;
+  line-height: 0;
+  padding-bottom: 0.12rem;
+  border-bottom: 1px dashed transparent;
+  transition: border-color 0.2s ease;
+}
+
+.contact-panel a.contact-image-link:hover {
+  border-bottom-color: rgba(77, 232, 255, 0.45);
+}
+
+.contact-image {
+  display: block;
+  height: 1.15rem;
+  width: auto;
+  max-width: 100%;
+}
+
+.contact-image-hover {
+  position: absolute;
+  inset: 0 auto auto 0;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.contact-image-link:hover .contact-image-default {
+  opacity: 0;
+}
+
+.contact-image-link:hover .contact-image-hover {
+  opacity: 1;
+}
+
+.contact-image-default {
+  transition: opacity 0.2s ease;
+}
+
 .chat-shell .eyebrow {
   margin-bottom: 0.32rem;
 }
