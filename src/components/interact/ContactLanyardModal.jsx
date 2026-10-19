@@ -1,15 +1,11 @@
 import { useEffect } from "react";
 import Lanyard from "../Lanyard";
 
-const CARD_FRONT = "/interact/lanyard/card-front.png?v=11";
+const CARD_FRONT = "/interact/lanyard/card-front.png?v=12";
 const CARD_BACK = "/interact/lanyard/card-back.png?v=5";
 
 const CONTACT = {
-  emails: [
-    "evelyn.cui2027@outlook.com",
-    "ccwevelyncambridge@outlook.com",
-    "P2321167@mpu.edu.mo",
-  ],
+  emails: ["ccwevelyncambridge@outlook.com", "P2321167@mpu.edu.mo"],
   phone: "+86 18518138586",
   phoneHref: "tel:+8618518138586",
   linkedin: "https://www.linkedin.com/in/congwen-cui",

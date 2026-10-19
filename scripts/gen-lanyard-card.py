@@ -95,7 +95,6 @@ def main():
     draw.text((cx, cy), "CONTACT", fill=CONTACT_TITLE, font=font_section)
 
     rows = [
-        ("Apply email", "evelyn.cui2027@outlook.com"),
         ("Personal email", "ccwevelyncambridge@outlook.com"),
         ("School email", "P2321167@mpu.edu.mo"),
         ("Phone", "+86 185 1813 8586"),
