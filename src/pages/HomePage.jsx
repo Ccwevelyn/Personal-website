@@ -191,55 +191,11 @@ export function HomePage() {
           <div className="contact-list">
             <p>
               <span>Email</span>
-              <a
-                className="contact-image-link"
-                href="#"
-                aria-label="Send email"
-                onClick={(event) => {
-                  event.preventDefault();
-                  window.location.href = "mailto:ccwevelyncambridge@outlook.com";
-                }}
-              >
-                <img
-                  className="contact-image contact-image-default"
-                  src="/contact/email-primary.png"
-                  alt=""
-                  decoding="async"
-                />
-                <img
-                  className="contact-image contact-image-hover"
-                  src="/contact/email-primary-hover.png"
-                  alt=""
-                  decoding="async"
-                  aria-hidden="true"
-                />
-              </a>
+              <a href="mailto:ccwevelyncambridge@outlook.com">ccwevelyncambridge@outlook.com</a>
             </p>
             <p>
               <span>Phone</span>
-              <a
-                className="contact-image-link"
-                href="#"
-                aria-label="Call phone"
-                onClick={(event) => {
-                  event.preventDefault();
-                  window.location.href = "tel:+8618518138586";
-                }}
-              >
-                <img
-                  className="contact-image contact-image-default"
-                  src="/contact/phone.png"
-                  alt=""
-                  decoding="async"
-                />
-                <img
-                  className="contact-image contact-image-hover"
-                  src="/contact/phone-hover.png"
-                  alt=""
-                  decoding="async"
-                  aria-hidden="true"
-                />
-              </a>
+              <a href="tel:+8618518138586">+86 18518138586</a>
             </p>
           </div>
         </section>
