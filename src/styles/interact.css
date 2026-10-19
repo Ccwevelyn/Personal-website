@@ -78,14 +78,14 @@
   overflow: hidden;
   margin-top: clamp(1rem, 3vw, 1.5rem);
   z-index: 5;
+  padding-inline: 0.02em;
 }
 
 .interact-hero-heading {
   width: 100%;
   white-space: nowrap;
-  font-size: clamp(14vw, 16vw, 17.5vw);
+  font-size: clamp(12.5vw, 14.2vw, 15.5vw);
 }
-
 .interact-hero-portrait {
   position: absolute;
   left: 50%;
@@ -157,6 +157,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  border: 0;
+  cursor: pointer;
   border-radius: 999px;
   padding: 0.75rem 2rem;
   color: #fff;
@@ -165,6 +167,7 @@
   letter-spacing: 0.16em;
   font-size: clamp(0.7rem, 1.2vw, 1rem);
   text-decoration: none;
+  font-family: inherit;
   background: linear-gradient(123deg, #18011f 7%, #b600a8 37%, #7621b0 72%, #be4c00 100%);
   box-shadow:
     0 4px 4px rgba(181, 1, 167, 0.25),
@@ -177,6 +180,117 @@
 .interact-contact-btn:hover {
   transform: translateY(-1px);
   filter: brightness(1.06);
+}
+
+.lanyard-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: grid;
+  place-items: center;
+  padding: clamp(0.75rem, 3vw, 1.5rem);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.15s ease, visibility 0.15s ease;
+}
+
+.lanyard-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.lanyard-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  background:
+    radial-gradient(ellipse at 30% 15%, rgba(182, 0, 168, 0.28), transparent 45%),
+    radial-gradient(ellipse at 80% 80%, rgba(190, 76, 0, 0.18), transparent 40%),
+    rgba(0, 0, 0, 0.78);
+}
+
+.lanyard-modal-panel {
+  position: relative;
+  z-index: 1;
+  width: min(920px, 100%);
+  height: min(860px, 92vh);
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 0.75rem;
+}
+
+.lanyard-modal-close {
+  position: absolute;
+  top: 0.35rem;
+  right: 0.35rem;
+  z-index: 2;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.65rem;
+  line-height: 1;
+  background: rgba(20, 4, 28, 0.72);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.22);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.lanyard-modal-close:hover {
+  background: rgba(80, 10, 70, 0.9);
+  transform: scale(1.04);
+}
+
+.lanyard-modal-stage {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+}
+
+.lanyard-modal-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.55rem 1rem;
+  padding: 0.55rem 0.75rem 0.35rem;
+  border-radius: 999px;
+  background: rgba(12, 2, 18, 0.55);
+  backdrop-filter: blur(8px);
+}
+
+.lanyard-modal-links a {
+  color: rgba(255, 230, 250, 0.92);
+  font-size: clamp(0.72rem, 1.5vw, 0.9rem);
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 0.2rem 0;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.lanyard-modal-links a:hover {
+  color: #ff9adf;
+  border-bottom-color: rgba(255, 154, 223, 0.7);
+}
+
+@media (max-width: 720px) {
+  .lanyard-modal-panel {
+    height: min(760px, 94vh);
+  }
+
+  .lanyard-modal-stage {
+    min-height: 360px;
+  }
 }
 
 .interact-marquee {
@@ -433,11 +547,27 @@ html.interact-mode body::after {
   overflow: hidden;
 }
 
-/* Second project: show ~3/4, then fade into the cliff */
+/* Second project: long soft fade into the cliff (no hard mid cut) */
 .interact-projects-cut-three-quarter {
-  max-height: min(72vh, 640px);
-  mask-image: linear-gradient(180deg, #000 68%, transparent 100%);
-  -webkit-mask-image: linear-gradient(180deg, #000 68%, transparent 100%);
+  max-height: min(58vh, 480px);
+  mask-image: linear-gradient(
+    180deg,
+    #000 0%,
+    #000 38%,
+    rgba(0, 0, 0, 0.92) 52%,
+    rgba(0, 0, 0, 0.62) 68%,
+    rgba(0, 0, 0, 0.28) 84%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    180deg,
+    #000 0%,
+    #000 38%,
+    rgba(0, 0, 0, 0.92) 52%,
+    rgba(0, 0, 0, 0.62) 68%,
+    rgba(0, 0, 0, 0.28) 84%,
+    transparent 100%
+  );
 }
 
 .interact-projects-cut-stage {
@@ -450,48 +580,128 @@ html.interact-mode body::after {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 42%;
+  height: 72%;
   background: linear-gradient(
     180deg,
     transparent 0%,
-    rgba(7, 7, 13, 0.55) 40%,
+    rgba(0, 0, 0, 0.18) 22%,
+    rgba(0, 0, 0, 0.48) 48%,
+    rgba(0, 0, 0, 0.82) 74%,
     var(--ix-bg) 100%
   );
   pointer-events: none;
 }
 
-.interact-projects-cut-edge::after {
-  content: "";
-  position: absolute;
-  left: 8%;
-  right: 8%;
-  bottom: 18%;
-  height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(254, 131, 198, 0.55),
-    rgba(77, 232, 255, 0.35),
-    transparent
-  );
-}
-
 .interact-project-card {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
-  border-radius: clamp(28px, 5vw, 56px);
+  gap: 0.9rem;
+  border-radius: clamp(22px, 4vw, 40px);
   border: 2px solid rgba(215, 226, 234, 0.75);
   background: #0a0a12;
-  padding: clamp(1rem, 2.5vw, 2rem);
+  padding: clamp(0.85rem, 2vw, 1.45rem);
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  max-width: min(920px, 100%);
+  margin-inline: auto;
+}
+
+.interact-cliff-row {
+  position: relative;
+  z-index: 2;
+  margin-top: clamp(-3.5rem, -6vw, -1.75rem);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(200px, 0.5fr);
+  align-items: end;
+  gap: clamp(0.25rem, 1.2vw, 0.85rem);
 }
 
 .interact-cliff {
   position: relative;
   z-index: 2;
-  margin-top: clamp(-1.25rem, -1.5vw, -0.25rem);
   max-width: 34rem;
+}
+
+.interact-cliff-figure {
+  position: relative;
+  justify-self: start;
+  width: min(100%, 380px);
+  margin: 0 0 0 clamp(-2.5rem, -5vw, -1rem);
+  line-height: 0;
+  transform: translateX(-2rem);
+}
+
+.interact-cliff-figure::before {
+  content: "";
+  position: absolute;
+  inset: 8% -8% -6% -12%;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 70% 55% at 42% 58%, rgba(180, 70, 200, 0.22), transparent 70%),
+    radial-gradient(ellipse 55% 45% at 55% 40%, rgba(254, 131, 198, 0.12), transparent 68%),
+    radial-gradient(ellipse 80% 40% at 50% 88%, rgba(0, 0, 0, 0.55), transparent 72%);
+  filter: blur(18px);
+}
+
+.interact-cliff-figure-img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: clamp(260px, 42vw, 420px);
+  object-fit: contain;
+  object-position: left bottom;
+  background: transparent;
+  pointer-events: none;
+  mix-blend-mode: normal;
+  filter:
+    drop-shadow(0 18px 36px rgba(0, 0, 0, 0.55))
+    drop-shadow(0 0 28px rgba(196, 100, 220, 0.28))
+    drop-shadow(0 0 12px rgba(254, 131, 198, 0.16));
+}
+
+.interact-cliff-circular-link {
+  position: absolute;
+  left: 2%;
+  top: 18%;
+  z-index: 4;
+  line-height: 0;
+  text-decoration: none;
+  transform: translate(-18%, -10%);
+}
+
+.interact-cliff-circular.circular-text {
+  margin: 0;
+}
+
+.interact-cliff-circular-center {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+}
+
+@media (max-width: 720px) {
+  .interact-cliff-row {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+
+  .interact-cliff-figure {
+    justify-self: center;
+    width: min(70%, 240px);
+  }
+
+  .interact-cliff-figure-img {
+    max-height: 200px;
+    object-position: center bottom;
+  }
+
+  .interact-cliff-circular-link {
+    left: 8%;
+    top: 16%;
+  }
 }
 
 .interact-cliff-kicker {
@@ -507,9 +717,27 @@ html.interact-mode body::after {
   margin: 0 0 0.85rem;
   font-size: clamp(1.75rem, 4.5vw, 2.75rem);
   font-weight: 800;
-  line-height: 1.1;
+  line-height: 1.15;
   letter-spacing: -0.02em;
-  color: var(--ix-text);
+  color: #ffffff;
+  -webkit-text-fill-color: #ffffff;
+  background: none;
+  -webkit-mask-image: none;
+  mask-image: none;
+  text-shadow: 0 0 28px rgba(254, 131, 198, 0.22);
+}
+
+.interact-cliff-title.split-parent {
+  display: block !important;
+  max-width: 100%;
+}
+
+.interact-cliff-title .split-char,
+.interact-cliff-title .split-word {
+  color: #ffffff;
+  -webkit-text-fill-color: #ffffff;
+  background: none;
+  will-change: transform, opacity;
 }
 
 .interact-cliff-body {
@@ -523,13 +751,34 @@ html.interact-mode body::after {
 .interact-cliff-actions {
   margin-top: 1.5rem;
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 1rem 1.35rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.7rem;
 }
 
-.interact-cliff-secondary {
-  font-size: 0.9rem;
+.interact-cliff-back {
+  display: inline-flex;
+  align-items: center;
+  margin: 0.45rem 0 0 1.15rem;
+  font-family: "Kanit", "Syne", sans-serif;
+  font-size: clamp(0.72rem, 1.2vw, 0.82rem);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  line-height: 1.2;
+  color: #9b5de8;
+  background: linear-gradient(118deg, #6b21a8 0%, #9b5de8 42%, #c4b5fd 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0.92;
+  transition: opacity 0.2s ease, filter 0.2s ease;
+}
+
+.interact-cliff-back:hover {
+  opacity: 1;
+  filter: brightness(1.12);
 }
 
 .interact-project-top {
@@ -589,23 +838,45 @@ html.interact-mode body::after {
 }
 
 .interact-project-col-left img:first-child {
-  height: clamp(130px, 16vw, 230px);
+  height: clamp(100px, 13vw, 168px);
+  object-position: top center;
 }
 
 .interact-project-col-left img:last-child {
-  height: clamp(160px, 22vw, 340px);
+  height: clamp(108px, 14vw, 200px);
+}
+
+.interact-project-full-wrap .interact-project-col-left img:first-child {
+  height: clamp(118px, 15vw, 190px);
+  object-position: top center;
 }
 
 .interact-project-col-right img {
   height: 100%;
-  min-height: clamp(300px, 40vw, 580px);
+  min-height: clamp(200px, 26vw, 340px);
 }
 
 .interact-project-media img {
   width: 100%;
   object-fit: cover;
-  border-radius: clamp(28px, 5vw, 56px);
+  border-radius: clamp(18px, 3.5vw, 36px);
   background: #15151f;
+}
+
+/* My Plan (cut card): still tall enough to feel truncated, but scaled down */
+.interact-projects-cut .interact-project-col-left img:first-child {
+  height: clamp(140px, 18vw, 250px);
+  object-position: top center;
+}
+
+.interact-projects-cut .interact-project-col-left img:last-child {
+  height: clamp(170px, 24vw, 320px);
+  object-position: top center;
+}
+
+.interact-projects-cut .interact-project-col-right img {
+  min-height: clamp(280px, 36vw, 480px);
+  object-position: top center;
 }
 
 .interact-footer {
@@ -615,22 +886,13 @@ html.interact-mode body::after {
   gap: 1rem;
   padding: 1.5rem clamp(1.25rem, 4vw, 2.5rem) 2.5rem;
   color: rgba(255, 244, 250, 0.55);
-  font-size: 0.85rem;
+  font-size: clamp(0.95rem, 1.6vw, 1.1rem);
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
-.interact-back-home {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  color: var(--ix-pink);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.interact-back-home:hover {
-  opacity: 0.8;
+.interact-footer-solo {
+  justify-content: flex-end;
 }
 
 @media (max-width: 720px) {

@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { AnimatedText } from "../components/interact/AnimatedText";
 import { ButterflyField } from "../components/interact/ButterflyField";
 import { ContactButton } from "../components/interact/ContactButton";
+import { ContactLanyardModal } from "../components/interact/ContactLanyardModal";
 import { FadeIn } from "../components/interact/FadeIn";
 import { GazeFollowVideo } from "../components/interact/GazeFollowVideo";
 import { ProjectCliff } from "../components/interact/ProjectCliff";
@@ -70,6 +71,7 @@ function MarqueeSection() {
 
 export function InteractPage() {
   const location = useLocation();
+  const [lanyardOpen, setLanyardOpen] = useState(false);
 
   useEffect(() => {
     const previous = document.title;
@@ -138,10 +140,15 @@ export function InteractPage() {
             sympathy, decisions, and systems people can trust
           </FadeIn>
           <FadeIn delay={0.5} y={20}>
-            <ContactButton to="mailto:ccwevelyncambridge@outlook.com" />
+            <ContactButton onClick={() => setLanyardOpen(true)} />
           </FadeIn>
         </div>
       </section>
+
+      <ContactLanyardModal
+        open={lanyardOpen}
+        onClose={() => setLanyardOpen(false)}
+      />
 
       <MarqueeSection />
 
@@ -195,19 +202,7 @@ export function InteractPage() {
 
       <ProjectCliff />
 
-      <footer className="interact-footer">
-        <Link to="/" className="interact-back-home">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path
-              d="M19 12H5M12 19l-7-7 7-7"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-          Back to classic site
-        </Link>
+      <footer className="interact-footer interact-footer-solo">
         <p>CUI CONGWEN · EVELYN</p>
       </footer>
     </div>

@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import CircularText from "../CircularText";
+import SplitText from "../SplitText";
 import { ContactButton } from "./ContactButton";
 import { FadeIn } from "./FadeIn";
 import {
@@ -7,9 +9,9 @@ import {
   PROJECT_CLIFF,
 } from "../../data/interactContent";
 
-function ProjectCard({ project, className = "" }) {
+function ProjectCard({ project }) {
   return (
-    <article className={`interact-project-card ${className}`.trim()}>
+    <article className="interact-project-card">
       <div className="interact-project-top">
         <p className="interact-project-num">{project.number}</p>
         <div className="interact-project-meta">
@@ -52,17 +54,63 @@ export function ProjectCliff() {
         </div>
       </div>
 
-      <FadeIn className="interact-cliff" delay={0.1} y={28}>
-        <p className="interact-cliff-kicker">{PROJECT_CLIFF.kicker}</p>
-        <h3 className="interact-cliff-title">{PROJECT_CLIFF.title}</h3>
-        <p className="interact-cliff-body">{PROJECT_CLIFF.body}</p>
-        <div className="interact-cliff-actions">
-          <ContactButton to={PROJECT_CLIFF.primaryTo} label={PROJECT_CLIFF.primaryLabel} />
-          <Link className="interact-text-link interact-cliff-secondary" to={PROJECT_CLIFF.secondaryTo}>
-            {PROJECT_CLIFF.secondaryLabel}
-          </Link>
+      <div className="interact-cliff-row">
+        <div className="interact-cliff">
+          <p className="interact-cliff-kicker">{PROJECT_CLIFF.kicker}</p>
+          <SplitText
+            tag="h3"
+            text={PROJECT_CLIFF.title}
+            className="interact-cliff-title"
+            effect="rise"
+            splitType="chars"
+            delay={50}
+            duration={1.45}
+            staggerFrom="start"
+            trigger="view"
+            hoverEffect="lift"
+            textAlign="left"
+            threshold={0.15}
+            rootMargin="-60px"
+          />
+          <FadeIn as="p" className="interact-cliff-body" delay={0.15} y={20}>
+            {PROJECT_CLIFF.body}
+          </FadeIn>
+          <FadeIn className="interact-cliff-actions" delay={0.25} y={16}>
+            <ContactButton to={PROJECT_CLIFF.primaryTo} label={PROJECT_CLIFF.primaryLabel} />
+            <Link to="/" className="interact-cliff-back">
+              ← Back to classic site
+            </Link>
+          </FadeIn>
         </div>
-      </FadeIn>
+        <FadeIn className="interact-cliff-figure" delay={0.2} y={24}>
+          <img
+            src="/interact/cliff-evelyn.png?v=2"
+            alt="Evelyn pointing toward the invitation"
+            className="interact-cliff-figure-img"
+          />
+          <Link to="/" className="interact-cliff-circular-link" aria-label="Back to classic site">
+            <CircularText
+              className="interact-cliff-circular"
+              text="BACK TO CLASSIC SITE • "
+              onHover="speedUp"
+              direction="clockwise"
+              spinDuration={18}
+              size={108}
+              fontSize={10}
+              fontWeight={700}
+              color="#ffffff"
+              ring
+              ringColor="rgba(255, 255, 255, 0.55)"
+              hoverTilt={12}
+              draggable
+            >
+              <span className="interact-cliff-circular-center" aria-hidden="true">
+                ←
+              </span>
+            </CircularText>
+          </Link>
+        </FadeIn>
+      </div>
     </section>
   );
 }

@@ -56,10 +56,9 @@ export const INTERACT_PROJECT_FULL = {
   title: "Image-Based English Vocabulary",
   summary:
     "Photograph an object, recognize the English word, hear it spoken, and save it to a wordbook — Year 2 mini-project I also mentored.",
-  href: "/portfolio",
   images: [
-    "/interact/projects/english-vocab-camera.png",
-    "/interact/projects/english-vocab-banner.png",
+    "/interact/projects/english-vocab-banner.png?v=3",
+    "/interact/projects/english-vocab-camera.png?v=4",
     "/portfolio/screenshots/english-vocab-wordbook.png",
   ],
 };
@@ -70,7 +69,6 @@ export const INTERACT_PROJECT_PARTIAL = {
   title: "My Plan",
   summary:
     "Local-first planner: AI asks one gap at a time, builds checklists, and writes them onto a calendar you can open.",
-  href: "/portfolio",
   images: [
     "/interact/projects/my-plan-ai.png",
     "/portfolio/my-plan/ai-planning-checklist.png",
@@ -84,6 +82,4 @@ export const PROJECT_CLIFF = {
   body: "Who I am and what I keep asking are already here. The project list goes on — the careful write-ups live on the classic site, and the playful ones are longer than this scroll. If you're curious enough to ask for more: admit me. Or just write.",
   primaryLabel: "Admit me · write",
   primaryTo: "mailto:ccwevelyncambridge@outlook.com?subject=I%20want%20to%20know%20more",
-  secondaryLabel: "Classic portfolio →",
-  secondaryTo: "/portfolio",
 };
