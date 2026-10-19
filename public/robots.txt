@@ -1,0 +1,3 @@
+# Limit automated crawling of this personal site.
+User-agent: *
+Disallow: /
