@@ -60,7 +60,7 @@ export function ResearchPage() {
     <main className="research-page">
       <header className="research-page-header portfolio-header">
         <p className="eyebrow">Direction</p>
-        <h1>Research Purpose</h1>
+        <h1>Research Statement</h1>
         <p>
           Questions I keep asking, why they pull me toward Computer Science, and systems I want to
           grow toward.

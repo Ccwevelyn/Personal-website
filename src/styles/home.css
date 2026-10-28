@@ -214,17 +214,34 @@ html.has-site-cursor * {
 
 .hero-actions {
   margin-top: 0.75rem;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.55rem;
+  display: grid;
+  grid-template-columns: repeat(2, 12.25rem);
+  gap: 0.55rem 1.15rem;
+  justify-content: start;
 }
 
 .hero-actions .cta-button {
   margin-top: 0;
   box-sizing: border-box;
-  min-width: 11.5rem;
-  padding-inline: 1.15rem;
+  width: 100%;
+  min-width: 0;
+  min-height: 2.65rem;
+  height: 2.65rem;
+  padding: 0 1rem;
+  border-width: 1px;
+  border-radius: 999px;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.hero-actions button.cta-button {
+  cursor: pointer;
+  appearance: none;
 }
 
 .hero-portrait-link {
@@ -376,6 +393,31 @@ html.has-site-cursor * {
     0 10px 24px rgba(77, 232, 255, 0.18),
     0 0 22px rgba(254, 131, 198, 0.22),
     inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+.cta-button.video-essay {
+  margin-top: 0;
+  color: #fff8fd;
+  background:
+    linear-gradient(145deg, rgba(72, 24, 96, 0.96) 0%, rgba(32, 18, 52, 0.94) 52%, rgba(12, 28, 44, 0.98) 100%)
+      padding-box,
+    linear-gradient(125deg, #c4b5fd 0%, var(--pink) 52%, var(--cyan) 100%) border-box;
+  border: 1px solid transparent;
+  box-shadow:
+    0 0 22px rgba(196, 181, 253, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+.cta-button.video-essay:hover {
+  transform: translateY(-2px);
+  background:
+    linear-gradient(145deg, rgba(88, 32, 112, 0.98) 0%, rgba(40, 22, 60, 0.96) 52%, rgba(16, 36, 52, 1) 100%)
+      padding-box,
+    linear-gradient(125deg, #ddd6fe 0%, var(--pink-strong) 48%, var(--cyan) 100%) border-box;
+  box-shadow:
+    0 10px 28px rgba(77, 232, 255, 0.22),
+    0 0 26px rgba(196, 181, 253, 0.32),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .growth-panel,
@@ -3292,6 +3334,97 @@ html.has-site-cursor * {
   }
 }
 
+.video-essay-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 85;
+  display: grid;
+  place-items: center;
+  padding: clamp(0.75rem, 3vw, 1.5rem);
+  padding-right: clamp(1.25rem, 5vw, 2.5rem);
+  background: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(4px);
+}
+
+.video-essay-modal {
+  width: min(56rem, 100%);
+  max-height: 92dvh;
+  margin-right: clamp(0.35rem, 1.5vw, 0.85rem);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(254, 131, 198, 0.28);
+  border-radius: 12px;
+  background: #101018;
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.72);
+}
+
+.video-essay-modal-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 0.85rem;
+  height: 2.35rem;
+  background: linear-gradient(90deg, rgba(28, 10, 40, 0.95), rgba(16, 16, 24, 0.98));
+  border-bottom: 1px solid rgba(254, 131, 198, 0.18);
+}
+
+.video-essay-modal-dots {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.video-essay-modal-dots span {
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 50%;
+  background: #ff5f57;
+}
+
+.video-essay-modal-dots span:nth-child(2) {
+  background: #febc2e;
+}
+
+.video-essay-modal-dots span:nth-child(3) {
+  background: #28c840;
+}
+
+.video-essay-modal-title {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: var(--text-soft);
+}
+
+.video-essay-modal-close {
+  margin-left: auto;
+  border: 0;
+  background: transparent;
+  color: var(--cyan);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.video-essay-modal-close:hover {
+  color: #bdf8ff;
+}
+
+.video-essay-modal-body {
+  padding: 0;
+  background: #000;
+}
+
+.video-essay-player {
+  display: block;
+  width: 100%;
+  max-height: calc(92dvh - 2.35rem);
+  vertical-align: middle;
+  background: #000;
+}
+
 .readme-modal-backdrop {
   position: fixed;
   inset: 0;
@@ -3580,6 +3713,17 @@ html.has-site-cursor * {
     width: 100%;
     max-width: 320px;
     min-height: 44px;
+  }
+
+  .hero-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    max-width: 24.5rem;
+  }
+
+  .hero-actions .cta-button {
+    min-height: 44px;
+    height: 44px;
   }
 }
 

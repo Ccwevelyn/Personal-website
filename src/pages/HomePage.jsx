@@ -4,6 +4,8 @@ import { GrowthTrendChart } from "../components/GrowthTrendChart";
 import { ExperienceButton } from "../components/ExperienceButton";
 import { PortfolioButton } from "../components/PortfolioButton";
 import { ResearchButton } from "../components/ResearchButton";
+import { VideoEssayButton } from "../components/VideoEssayButton";
+import { VideoEssayModal } from "../components/VideoEssayModal";
 import { ResearchInterests } from "../components/ResearchInterests";
 import { SkillMatrix } from "../components/SkillMatrix";
 import { WeightTrendChart } from "../components/WeightTrendChart";
@@ -114,6 +116,8 @@ function EvelynChat() {
 }
 
 export function HomePage() {
+  const [videoEssayOpen, setVideoEssayOpen] = useState(false);
+
   return (
     <main className="home-page">
       <section className="hero-section panel">
@@ -135,6 +139,7 @@ export function HomePage() {
               <PortfolioButton />
               <ExperienceButton />
               <ResearchButton />
+              <VideoEssayButton onClick={() => setVideoEssayOpen(true)} />
             </div>
           </div>
           <figure className="hero-portrait-wrap">
@@ -204,6 +209,8 @@ export function HomePage() {
           <EvelynChat />
         </section>
       </section>
+
+      <VideoEssayModal open={videoEssayOpen} onClose={() => setVideoEssayOpen(false)} />
     </main>
   );
 }

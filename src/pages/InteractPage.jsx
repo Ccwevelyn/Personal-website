@@ -4,6 +4,7 @@ import { AnimatedText } from "../components/interact/AnimatedText";
 import { ButterflyField } from "../components/interact/ButterflyField";
 import { ContactButton } from "../components/interact/ContactButton";
 import { ContactLanyardModal } from "../components/interact/ContactLanyardModal";
+import { VideoEssayModal } from "../components/VideoEssayModal";
 import { FadeIn } from "../components/interact/FadeIn";
 import { GazeFollowVideo } from "../components/interact/GazeFollowVideo";
 import { ProjectCliff } from "../components/interact/ProjectCliff";
@@ -72,6 +73,7 @@ function MarqueeSection() {
 export function InteractPage() {
   const location = useLocation();
   const [lanyardOpen, setLanyardOpen] = useState(false);
+  const [videoEssayOpen, setVideoEssayOpen] = useState(false);
 
   useEffect(() => {
     document.documentElement.classList.add("interact-mode");
@@ -136,7 +138,12 @@ export function InteractPage() {
           <FadeIn as="p" className="interact-hero-lead" delay={0.35} y={20}>
             sympathy, decisions, and systems people can trust
           </FadeIn>
-          <FadeIn delay={0.5} y={20}>
+          <FadeIn className="interact-hero-cta" delay={0.5} y={20}>
+            <ContactButton
+              label="Video Essay"
+              className="interact-contact-btn-secondary"
+              onClick={() => setVideoEssayOpen(true)}
+            />
             <ContactButton onClick={() => setLanyardOpen(true)} />
           </FadeIn>
         </div>
@@ -145,6 +152,10 @@ export function InteractPage() {
       <ContactLanyardModal
         open={lanyardOpen}
         onClose={() => setLanyardOpen(false)}
+      />
+      <VideoEssayModal
+        open={videoEssayOpen}
+        onClose={() => setVideoEssayOpen(false)}
       />
 
       <MarqueeSection />
@@ -171,7 +182,7 @@ export function InteractPage() {
             href="#research"
             onClick={(event) => onNavSectionClick(event, "research")}
           >
-            Research Purpose
+            Research Statement
           </a>
         </div>
       </section>
@@ -199,7 +210,7 @@ export function InteractPage() {
         </div>
         <div className="interact-research-cta">
           <Link className="interact-text-link" to="/research">
-            Full research purpose →
+            Full research statement →
           </Link>
         </div>
       </section>

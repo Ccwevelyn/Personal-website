@@ -142,6 +142,25 @@
   position: relative;
 }
 
+.interact-hero-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: clamp(1rem, 2.4vw, 1.35rem);
+}
+
+.interact-contact-btn-secondary {
+  background: linear-gradient(168deg, rgba(24, 1, 31, 0.95), rgba(40, 8, 52, 0.92));
+  box-shadow:
+    0 4px 14px rgba(0, 0, 0, 0.35),
+    inset 0 0 0 1px rgba(254, 131, 198, 0.35);
+  outline-color: rgba(254, 131, 198, 0.55);
+}
+
+.interact-contact-btn-secondary:hover {
+  filter: brightness(1.12);
+}
+
 .interact-hero-lead {
   margin: 0;
   max-width: min(260px, 42vw);
