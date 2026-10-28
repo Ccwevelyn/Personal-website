@@ -5,6 +5,7 @@ import { ButterflyField } from "../components/interact/ButterflyField";
 import { ContactButton } from "../components/interact/ContactButton";
 import { ContactLanyardModal } from "../components/interact/ContactLanyardModal";
 import { VideoEssayModal } from "../components/VideoEssayModal";
+import { VIDEO_ESSAY_BUTTON_LABEL } from "../components/videoEssayMedia";
 import { FadeIn } from "../components/interact/FadeIn";
 import { GazeFollowVideo } from "../components/interact/GazeFollowVideo";
 import { ProjectCliff } from "../components/interact/ProjectCliff";
@@ -140,7 +141,7 @@ export function InteractPage() {
           </FadeIn>
           <FadeIn className="interact-hero-cta" delay={0.5} y={20}>
             <ContactButton
-              label="Video Essay"
+              label={VIDEO_ESSAY_BUTTON_LABEL}
               className="interact-contact-btn-secondary"
               onClick={() => setVideoEssayOpen(true)}
             />

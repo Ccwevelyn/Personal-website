@@ -1,7 +1,9 @@
 import { useEffect, useRef } from "react";
-
-const VIDEO_SRC = "/video/video-essay.mp4";
-const POSTER_SRC = "/video/video-essay-poster.jpg";
+import {
+  VIDEO_ESSAY_POSTER,
+  VIDEO_ESSAY_SRC,
+  VIDEO_ESSAY_TITLE,
+} from "./videoEssayMedia";
 
 export function VideoEssayModal({ open, onClose }) {
   const videoRef = useRef(null);
@@ -35,7 +37,7 @@ export function VideoEssayModal({ open, onClose }) {
       className="video-essay-modal-backdrop"
       role="dialog"
       aria-modal="true"
-      aria-label="Video essay"
+      aria-label={VIDEO_ESSAY_TITLE}
       onClick={(event) => {
         if (event.target === event.currentTarget) onClose?.();
       }}
@@ -47,7 +49,7 @@ export function VideoEssayModal({ open, onClose }) {
             <span />
             <span />
           </span>
-          <span className="video-essay-modal-title">Video Essay</span>
+          <span className="video-essay-modal-title">{VIDEO_ESSAY_TITLE}</span>
           <button type="button" className="video-essay-modal-close" onClick={onClose}>
             Close
           </button>
@@ -56,8 +58,8 @@ export function VideoEssayModal({ open, onClose }) {
           <video
             ref={videoRef}
             className="video-essay-player"
-            src={VIDEO_SRC}
-            poster={POSTER_SRC}
+            src={VIDEO_ESSAY_SRC}
+            poster={VIDEO_ESSAY_POSTER}
             controls
             playsInline
             preload="metadata"

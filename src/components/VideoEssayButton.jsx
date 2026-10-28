@@ -1,3 +1,5 @@
+import { VIDEO_ESSAY_BUTTON_LABEL } from "./videoEssayMedia";
+
 export function VideoEssayButton({ className = "", onClick }) {
   return (
     <button
@@ -5,7 +7,7 @@ export function VideoEssayButton({ className = "", onClick }) {
       className={`cta-button video-essay ${className}`.trim()}
       onClick={onClick}
     >
-      Video Essay
+      {VIDEO_ESSAY_BUTTON_LABEL}
     </button>
   );
 }
