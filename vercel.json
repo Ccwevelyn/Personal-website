@@ -3,7 +3,7 @@
   "outputDirectory": "dist",
   "headers": [
     {
-      "source": "/video/(.*)",
+      "source": "/video-essay.(mp4|jpg)",
       "headers": [{ "key": "Cache-Control", "value": "public, max-age=86400" }]
     }
   ],
