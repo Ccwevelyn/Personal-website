@@ -143,14 +143,12 @@ export function InteractPage() {
             sympathy, decisions, and systems people can trust
           </FadeIn>
           <FadeIn className="interact-hero-cta" delay={0.5} y={20}>
-            <div className="interact-hero-video-cta">
-              <ContactButton
-                label={VIDEO_ESSAY_BUTTON_LABEL}
-                className="interact-contact-btn-secondary"
-                onClick={() => setVideoEssayOpen(true)}
-              />
-              <p className="interact-hero-video-caption">{VIDEO_ESSAY_KIND}</p>
-            </div>
+            <ContactButton
+              label={VIDEO_ESSAY_BUTTON_LABEL}
+              subLabel={VIDEO_ESSAY_KIND}
+              className="interact-contact-btn-secondary interact-contact-btn-video-essay"
+              onClick={() => setVideoEssayOpen(true)}
+            />
             <ContactButton onClick={() => setLanyardOpen(true)} />
           </FadeIn>
         </div>
