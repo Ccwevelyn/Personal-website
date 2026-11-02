@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import Lanyard from "../Lanyard";
 
 const CARD_FRONT = "/interact/lanyard/card-front.png?v=12";
-const CARD_BACK = "/interact/lanyard/card-back.png?v=5";
+const CARD_BACK = "/interact/lanyard/card-back.png?v=6";
 
 const CONTACT = {
   emails: ["ccwevelyncambridge@outlook.com", "P2321167@mpu.edu.mo"],
