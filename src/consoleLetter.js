@@ -21,8 +21,6 @@ const DIVIDER = "——";
 
 export function logConsoleLetter() {
   if (typeof window === "undefined") return;
-  console.log(
-    `%c${LETTER_EN}\n\n${DIVIDER}\n\n${LETTER_ZH}`,
-    "font-size: 13px; line-height: 1.55; color: #d7e2ea;",
-  );
+  // No fixed text color — DevTools light/dark themes use different backgrounds.
+  console.log(`${LETTER_EN}\n\n${DIVIDER}\n\n${LETTER_ZH}`);
 }

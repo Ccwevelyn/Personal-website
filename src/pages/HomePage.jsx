@@ -5,7 +5,10 @@ import { ExperienceButton } from "../components/ExperienceButton";
 import { PortfolioButton } from "../components/PortfolioButton";
 import { ResearchButton } from "../components/ResearchButton";
 import { VideoEssayButton } from "../components/VideoEssayButton";
+import { StoryPanelsModal } from "../components/interact/StoryPanelsModal";
 import { VideoEssayModal } from "../components/VideoEssayModal";
+import { STORY_PANELS_BUTTON_LABEL } from "../components/storyPanelsMedia";
+import "../styles/interact.css";
 import { ResearchInterests } from "../components/ResearchInterests";
 import { SkillMatrix } from "../components/SkillMatrix";
 import { WeightTrendChart } from "../components/WeightTrendChart";
@@ -117,6 +120,7 @@ function EvelynChat() {
 
 export function HomePage() {
   const [videoEssayOpen, setVideoEssayOpen] = useState(false);
+  const [storyPanelsOpen, setStoryPanelsOpen] = useState(false);
 
   return (
     <main className="home-page">
@@ -127,19 +131,34 @@ export function HomePage() {
             <h1>
               <span className="hero-name">CUI CONGWEN · EVELYN</span>
               <span className="hero-tagline">
-                I use data and sympathy to turn massive problems into projects people can use
+                I care how people and systems decide
               </span>
             </h1>
             <p className="hero-desc">
-              I care how people and systems decide. Agents, medical imaging, accessibility, and
-              fatigue sensing keep showing me the hard part sits between human needs and system
-              limits. I study CS to build tools people can trust and use.
+              Agents, medical imaging, accessibility, and fatigue sensing keep showing me the hard
+              part sits between human needs and system limits. I study CS to build tools people can{" "}
+              <span className="hero-desc-tail">trust and use.</span>
             </p>
             <div className="hero-actions">
-              <PortfolioButton />
-              <ExperienceButton />
-              <ResearchButton />
-              <VideoEssayButton onClick={() => setVideoEssayOpen(true)} />
+              <ResearchButton primary className="hero-actions-research" />
+              <div className="hero-actions-media">
+                <VideoEssayButton
+                  label="Video Essay"
+                  onClick={() => setVideoEssayOpen(true)}
+                />
+                <button
+                  type="button"
+                  className="cta-button video-essay"
+                  onClick={() => setStoryPanelsOpen(true)}
+                >
+                  {STORY_PANELS_BUTTON_LABEL}
+                </button>
+              </div>
+              <PortfolioButton label="Project Experience" className="secondary" />
+              <ExperienceButton
+                label="Education · Internship · Beyond"
+                className="hero-actions-experience"
+              />
             </div>
           </div>
           <figure className="hero-portrait-wrap">
@@ -211,6 +230,7 @@ export function HomePage() {
       </section>
 
       <VideoEssayModal open={videoEssayOpen} onClose={() => setVideoEssayOpen(false)} />
+      <StoryPanelsModal open={storyPanelsOpen} onClose={() => setStoryPanelsOpen(false)} />
     </main>
   );
 }

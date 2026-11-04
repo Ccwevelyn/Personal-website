@@ -4,7 +4,12 @@ import { AnimatedText } from "../components/interact/AnimatedText";
 import { ButterflyField } from "../components/interact/ButterflyField";
 import { ContactButton } from "../components/interact/ContactButton";
 import { ContactLanyardModal } from "../components/interact/ContactLanyardModal";
+import { StoryPanelsModal } from "../components/interact/StoryPanelsModal";
 import { VideoEssayModal } from "../components/VideoEssayModal";
+import {
+  STORY_PANELS_ATELIER_KIND,
+  STORY_PANELS_ATELIER_LABEL,
+} from "../components/storyPanelsMedia";
 import {
   VIDEO_ESSAY_BUTTON_LABEL,
   VIDEO_ESSAY_KIND,
@@ -78,6 +83,7 @@ export function InteractPage() {
   const location = useLocation();
   const [lanyardOpen, setLanyardOpen] = useState(false);
   const [videoEssayOpen, setVideoEssayOpen] = useState(false);
+  const [storyPanelsOpen, setStoryPanelsOpen] = useState(false);
 
   useEffect(() => {
     document.documentElement.classList.add("interact-mode");
@@ -146,8 +152,14 @@ export function InteractPage() {
             <ContactButton
               label={VIDEO_ESSAY_BUTTON_LABEL}
               subLabel={VIDEO_ESSAY_KIND}
-              className="interact-contact-btn-secondary interact-contact-btn-video-essay"
+              className="interact-contact-btn-secondary interact-contact-btn-duo interact-contact-btn-video-essay"
               onClick={() => setVideoEssayOpen(true)}
+            />
+            <ContactButton
+              label={STORY_PANELS_ATELIER_LABEL}
+              subLabel={STORY_PANELS_ATELIER_KIND}
+              className="interact-contact-btn-secondary interact-contact-btn-duo interact-contact-btn-video-essay"
+              onClick={() => setStoryPanelsOpen(true)}
             />
             <ContactButton onClick={() => setLanyardOpen(true)} />
           </FadeIn>
@@ -161,6 +173,10 @@ export function InteractPage() {
       <VideoEssayModal
         open={videoEssayOpen}
         onClose={() => setVideoEssayOpen(false)}
+      />
+      <StoryPanelsModal
+        open={storyPanelsOpen}
+        onClose={() => setStoryPanelsOpen(false)}
       />
 
       <MarqueeSection />
