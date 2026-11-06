@@ -6,6 +6,6 @@ export const STORY_PANELS_BUTTON_LABEL = "Visual Portfolio";
 export const STORY_PANELS_ATELIER_LABEL = "Story Panels";
 export const STORY_PANELS_ATELIER_KIND = "Visual portfolio";
 export const STORY_PANELS_KIND = "Scroll to read";
-export const STORY_PANELS_PDF = "/portfolio/story-panels-evelyn.pdf?v=1";
+export const STORY_PANELS_PDF = "/portfolio/Portfolio_CUI_Congwen_Rice.pdf?v=2";
 /** Narrow portrait column: width drives page scale (manga-style scroll). */
 export const STORY_PANELS_VIEWPORT_WIDTH = 420;
