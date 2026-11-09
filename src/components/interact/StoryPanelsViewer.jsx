@@ -8,6 +8,8 @@ import {
 
 GlobalWorkerOptions.workerSrc = pdfWorker;
 
+const PDFJS_WASM_URL = `${import.meta.env.BASE_URL}pdfjs/wasm/`;
+
 function PdfScrollPage({ pdf, pageNumber, maxDisplayWidth }) {
   const rootRef = useRef(null);
   const canvasRef = useRef(null);
@@ -107,7 +109,10 @@ export function StoryPanelsViewer() {
       setError("");
       try {
         const pdfUrl = new URL(STORY_PANELS_PDF, window.location.origin).href;
-        const pdf = await getDocument({ url: pdfUrl }).promise;
+        const pdf = await getDocument({
+          url: pdfUrl,
+          wasmUrl: PDFJS_WASM_URL,
+        }).promise;
         if (cancelled) {
           pdf.destroy();
           return;
