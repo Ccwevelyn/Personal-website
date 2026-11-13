@@ -14,7 +14,7 @@ const SAMPLES = [
   },
   {
     id: "mri",
-    kicker: "Progress Report",
+    kicker: "COMP4299 Final Year Project · Progress Report",
     title: "MRI Synthesis Quality Metrics and Downstream Segmentation",
     line: "A progress-report excerpt from completed final-year project work.",
     file: "/docs/writing-sample/Writing_Sample-MRI_Synthesis_Quality_Metrics_and_Downstream_Segmentation-CUI_Congwen.pdf",
