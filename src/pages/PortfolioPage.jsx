@@ -4,6 +4,7 @@ import { ReadmePreviewModal } from "../components/ReadmePreviewModal";
 import { IspModelingPanel } from "../components/IspModelingPanel";
 import { IspZoomableImage } from "../components/IspZoomableImage";
 import { WordDocumentViewer } from "../components/WordDocumentViewer";
+import { ISP_DESIGN_FILE, WritingPdfModal } from "../components/WritingSampleBlock";
 import { ISP_MEETING_TODO_JAN13 } from "../data/ispMeetingTodoJan13";
 import { ISP_TEAM_QUESTIONS } from "../data/ispTeamQuestions";
 import { ISP_WORKBOOK_JAN17 } from "../data/ispWorkbookJan17";
@@ -92,6 +93,7 @@ function ProjectModal({ project, onClose }) {
   const [shotIndex, setShotIndex] = useState(0);
   const [readmeOpen, setReadmeOpen] = useState(false);
   const [tab, setTab] = useState("intro");
+  const [designOpen, setDesignOpen] = useState(false);
 
   const isEnglishVocab = project.modalType === "english-vocab";
   const isCurrency = project.modalType === "currency";
@@ -135,6 +137,15 @@ function ProjectModal({ project, onClose }) {
 
   return (
     <>
+      {designOpen ? (
+        <WritingPdfModal
+          sample={{
+            title: "COMP3114 Information System Project, Design 4.1–4.4",
+            file: ISP_DESIGN_FILE,
+          }}
+          onClose={() => setDesignOpen(false)}
+        />
+      ) : null}
       <div className="portfolio-modal-backdrop" role="dialog" aria-modal="true">
         <div className="portfolio-modal">
           <button type="button" className="portfolio-modal-close" onClick={onClose}>
@@ -163,11 +174,11 @@ function ProjectModal({ project, onClose }) {
 
           {isIspShopping && activeTab === "leadership" ? (
             <section className="portfolio-modal-thoughts portfolio-modal-split portfolio-leadership-panel">
-              <p className="portfolio-modal-role">
-                <span>Role</span> {project.role}
-              </p>
-              {project.leadershipIntro ? <p>{project.leadershipIntro}</p> : null}
-              {project.leadershipDivision ? (
+                <p className="portfolio-modal-role">
+                  <span>Role</span> {project.role}
+                </p>
+                {project.leadershipIntro ? <p>{project.leadershipIntro}</p> : null}
+                {project.leadershipDivision ? (
                 <div className="portfolio-leadership-block">
                   <h3 className="portfolio-modal-section-title">1. {project.leadershipDivision.title}</h3>
                   <p>{project.leadershipDivision.narrative}</p>
@@ -267,7 +278,7 @@ function ProjectModal({ project, onClose }) {
               ) : null}
             </section>
           ) : isIspShopping && activeTab === "modeling" ? (
-            <IspModelingPanel project={project} />
+            <IspModelingPanel project={project} onOpenDesign={() => setDesignOpen(true)} />
           ) : isCurrency && activeTab === "thoughts" ? (
             <section className="portfolio-modal-thoughts">
               <p>{project.specialThoughts}</p>

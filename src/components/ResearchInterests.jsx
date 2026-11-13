@@ -19,7 +19,7 @@ export function ResearchInterests() {
         </li>
         <li>
           <h3>Assistive &amp; Embodied Support</h3>
-          <p>Cut physical effort when people lift, move, or recover under real limits.</p>
+          <p>Sense what the body needs while the load moves, then take the weight before they ask.</p>
           <p className="research-tags">assistive robotics · embodied systems</p>
         </li>
         <li>

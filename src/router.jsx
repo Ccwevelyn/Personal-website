@@ -5,6 +5,7 @@ import { HomePage } from "./pages/HomePage";
 import { InteractPage } from "./pages/InteractPage";
 import { PortfolioPage } from "./pages/PortfolioPage";
 import { ResearchPage } from "./pages/ResearchPage";
+import { WritingPage } from "./pages/WritingPage";
 
 export const router = createBrowserRouter([
   {
@@ -15,6 +16,7 @@ export const router = createBrowserRouter([
       { path: "portfolio", element: <PortfolioPage /> },
       { path: "experience", element: <ExperiencePage /> },
       { path: "research", element: <ResearchPage /> },
+      { path: "writing", element: <WritingPage /> },
       { path: "atelier", element: <InteractPage /> },
     ],
   },

@@ -43,7 +43,22 @@ function ImagePreview({ title, src, previewSrc, alt, caption, wide, whiteBackgro
   );
 }
 
-export function IspModelingPanel({ project }) {
+function DesignChapterLink({ onOpenDesign }) {
+  return (
+    <section className="portfolio-modal-thoughts portfolio-modal-split portfolio-task-card isp-modeling-design-card">
+      <p className="portfolio-task-heading">
+        <span>Documentation</span>
+      </p>
+      <p className="portfolio-design-report-link">
+        <button type="button" onClick={onOpenDesign}>
+          Group assignment. Open the design chapter I wrote, sections 4.1 to 4.4
+        </button>
+      </p>
+    </section>
+  );
+}
+
+export function IspModelingPanel({ project, onOpenDesign }) {
   return (
     <section className="isp-modeling-panel" aria-label="Modeling capability artifacts">
       <p className="isp-modeling-intro">{project.modelingIntro ?? project.modeling}</p>
@@ -56,22 +71,27 @@ export function IspModelingPanel({ project }) {
       ) : null}
 
       {project.modelingSections?.map((section) => (
-        <div key={section.id} className="isp-modeling-section">
-          <h3 className="portfolio-modal-section-title">{section.title}</h3>
-          {section.description ? <p className="isp-modeling-section-desc">{section.description}</p> : null}
-          <div className="isp-modeling-artifacts">
-            {section.artifacts?.map((artifact) => (
-              <ImagePreview
-                key={artifact.src}
-                title={artifact.title}
-                src={artifact.src}
-                alt={artifact.alt}
-                caption={artifact.caption}
-                wide={artifact.wide}
-                previewSrc={artifact.previewSrc}
-                whiteBackground={artifact.whiteBackground}
-              />
-            ))}
+        <div key={section.id}>
+          {section.id === "testing" && onOpenDesign ? (
+            <DesignChapterLink onOpenDesign={onOpenDesign} />
+          ) : null}
+          <div className="isp-modeling-section">
+            <h3 className="portfolio-modal-section-title">{section.title}</h3>
+            {section.description ? <p className="isp-modeling-section-desc">{section.description}</p> : null}
+            <div className="isp-modeling-artifacts">
+              {section.artifacts?.map((artifact) => (
+                <ImagePreview
+                  key={artifact.src}
+                  title={artifact.title}
+                  src={artifact.src}
+                  alt={artifact.alt}
+                  caption={artifact.caption}
+                  wide={artifact.wide}
+                  previewSrc={artifact.previewSrc}
+                  whiteBackground={artifact.whiteBackground}
+                />
+              ))}
+            </div>
           </div>
         </div>
       ))}

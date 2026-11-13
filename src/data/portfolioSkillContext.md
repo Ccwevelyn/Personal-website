@@ -292,7 +292,7 @@ ID: isp-online-shopping
 
 **Role:** Project Manager / Team Leader
 
-**Summary:** Led planning, task allocation, and mentor coordination, and wrote ISD docs from requirements and architecture through ER modeling and testing.
+**Summary:** Led planning, task allocation, and mentor coordination, and wrote ISP docs from requirements and architecture through ER modeling and testing.
 
 **Leadership Intro:** I owned overall planning and task allocation. When conflicts showed up, I tried to catch them early, rebalance people and deadlines, and keep our mentor in the loop so delivery stayed on track.
 

@@ -136,12 +136,23 @@ export function HomePage() {
             </h1>
             <p className="hero-desc">
               Agents, medical imaging, accessibility, and fatigue sensing keep showing me the hard
-              part sits between human needs and system limits. I study CS to build tools people can{" "}
-              <span className="hero-desc-tail">trust and use.</span>
+              part
+              <br />
+              sits between human needs and system limits. I study CS to build tools people can trust
+              and use.
             </p>
             <div className="hero-actions">
-              <ResearchButton primary className="hero-actions-research" />
-              <div className="hero-actions-media">
+              <div className="hero-action-col hero-action-col-wide">
+                <ResearchButton primary />
+                <ExperienceButton label="Education · Internship · Beyond" />
+              </div>
+              <div className="hero-action-col hero-action-col-mid">
+                <Link to="/writing" className="cta-button secondary">
+                  Writing Sample
+                </Link>
+                <PortfolioButton label="Project Experience" className="secondary hero-action-project" />
+              </div>
+              <div className="hero-action-col">
                 <VideoEssayButton
                   label="Video Essay"
                   onClick={() => setVideoEssayOpen(true)}
@@ -154,11 +165,6 @@ export function HomePage() {
                   {STORY_PANELS_BUTTON_LABEL}
                 </button>
               </div>
-              <PortfolioButton label="Project Experience" className="secondary" />
-              <ExperienceButton
-                label="Education · Internship · Beyond"
-                className="hero-actions-experience"
-              />
             </div>
           </div>
           <figure className="hero-portrait-wrap">

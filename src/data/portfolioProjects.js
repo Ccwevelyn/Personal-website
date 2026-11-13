@@ -69,7 +69,7 @@ Flows work in 中文 and English, with timeouts and JSON fallbacks, and routes f
         format: "Group Coursework / Information Systems",
         focus: "Project Manager · Team Leader",
         summary:
-          "Led planning, task allocation, and mentor coordination, and wrote ISD docs from requirements and architecture through ER modeling and testing.",
+          "Led planning, task allocation, and mentor coordination, and wrote ISP docs from requirements and architecture through ER modeling and testing.",
         modalType: "isp-shopping",
         role: "Project Manager / Team Leader",
         leadershipIntro: `I owned overall planning and task allocation. When conflicts showed up, I tried to catch them early, rebalance people and deadlines, and keep our mentor in the loop so delivery stayed on track.`,

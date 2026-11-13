@@ -16,6 +16,11 @@ html.has-site-cursor * {
   cursor: none !important;
 }
 
+html.has-site-cursor .writing-sample-backdrop,
+html.has-site-cursor .writing-sample-backdrop * {
+  cursor: auto !important;
+}
+
 .site-cursor {
   --cursor-size: 14px;
   position: fixed;
@@ -144,6 +149,9 @@ html.has-site-cursor * {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  min-width: 0;
+  container-type: inline-size;
+  container-name: hero-intro;
 }
 
 .hero-kicker,
@@ -205,7 +213,7 @@ html.has-site-cursor * {
 
 .hero-desc {
   margin: 0.75rem 0 0;
-  max-width: 68ch;
+  max-width: 78ch;
   line-height: var(--leading-relaxed);
   font-size: clamp(0.92rem, 1.5vw, 1.02rem);
   font-weight: 400;
@@ -213,62 +221,75 @@ html.has-site-cursor * {
 }
 
 .hero-actions {
+  align-self: start;
   margin-top: 0.75rem;
+  margin-inline: 0;
   display: grid;
-  grid-template-columns: repeat(2, minmax(11.5rem, 15.5rem));
-  gap: 0.55rem 1.15rem;
+  grid-template-columns: max-content max-content max-content;
   justify-content: start;
-  align-items: stretch;
-}
-
-.hero-actions > * {
-  min-width: 0;
+  justify-items: start;
+  column-gap: 0.78rem;
+  row-gap: 0.42rem;
+  width: fit-content;
   max-width: 100%;
-}
-
-.hero-actions > a.hero-actions-research {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-actions-media {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: 0.45rem;
-  width: 100%;
+  align-items: stretch;
   box-sizing: border-box;
 }
 
+.hero-action-col {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 0.42rem;
+  min-width: 0;
+  max-width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.hero-action-col-wide {
+  width: max-content;
+}
+
+.hero-action-col-mid {
+  width: max-content;
+}
+
 .hero-actions .cta-button {
+  display: grid;
+  place-items: center;
+  align-content: center;
   margin-top: 0;
   box-sizing: border-box;
   width: 100%;
   max-width: 100%;
   min-width: 0;
-  min-height: 2.65rem;
-  height: auto;
-  padding: 0.48rem 0.55rem;
+  min-height: 2.85rem;
+  height: 100%;
+  padding: 0.48rem 0.7rem;
   border-width: 1px;
   border-radius: 999px;
   font-family: var(--font-sans);
   font-size: 0.68rem;
   font-weight: 600;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.035em;
   line-height: 1.2;
   text-transform: uppercase;
   text-align: center;
-  text-wrap: balance;
-  white-space: normal;
-}
-
-.hero-desc .hero-desc-tail {
+  text-wrap: nowrap;
   white-space: nowrap;
 }
 
 .hero-actions button.cta-button {
   cursor: pointer;
   appearance: none;
+}
+
+.hero-actions .cta-button.hero-action-project {
+  width: 100%;
+  max-width: none;
+  min-width: max-content;
+  justify-self: stretch;
+  padding-inline: 1.05rem;
 }
 
 .hero-portrait-link {
@@ -553,19 +574,8 @@ html.has-site-cursor * {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.research-block-title {
-  margin: 0 0 0.65rem;
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: rgba(255, 244, 250, 0.72);
-}
-
 .research-block-lead {
   margin: 0.15rem 0 0.85rem;
-  max-width: 68ch;
 }
 
 .research-block .research-detail-heading + .research-block-lead {
@@ -578,6 +588,141 @@ html.has-site-cursor * {
   list-style: none;
   display: grid;
   gap: 0.85rem;
+}
+
+.research-writing-grid {
+  margin: 0.2rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.85rem;
+}
+
+@media (min-width: 860px) {
+  .research-writing-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+  }
+}
+
+.research-writing-card {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 1.05rem 1rem 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(165deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.012));
+}
+
+.research-writing-kicker {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 244, 250, 0.55);
+}
+
+.research-writing-card h3 {
+  margin: 0.45rem 0 0;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.35;
+  color: var(--text-main);
+}
+
+.research-writing-card p {
+  margin: 0.45rem 0 0;
+  font-size: 0.86rem;
+  line-height: 1.55;
+  color: var(--text-soft);
+}
+
+.research-writing-actions {
+  display: flex;
+  gap: 0.7rem;
+  margin-top: auto;
+  padding-top: 0.9rem;
+}
+
+.research-writing-actions button,
+.research-writing-actions a {
+  appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: transparent;
+  color: var(--text-main);
+  border-radius: 999px;
+  padding: 0.32rem 0.85rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.research-writing-actions button {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.writing-sample-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  background: rgba(8, 6, 12, 0.72);
+}
+
+.writing-sample-dialog {
+  width: min(960px, 100%);
+  height: min(82vh, 860px);
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #111;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.writing-sample-dialog-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.65rem 0.85rem;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.writing-sample-dialog-bar p {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
+.writing-sample-dialog-bar button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: var(--cyan);
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.writing-sample-dialog iframe {
+  flex: 1;
+  width: 100%;
+  border: 0;
+  background: #fff;
 }
 
 .research-kicker {
@@ -616,6 +761,10 @@ html.has-site-cursor * {
   font-size: 0.9rem;
   line-height: var(--leading-relaxed);
   color: var(--text-soft);
+}
+
+.research-lead.research-block-lead {
+  max-width: none;
 }
 
 .research-panel:not(.research-panel-detail) > .research-lead {
@@ -2542,6 +2691,27 @@ html.has-site-cursor * {
   color: var(--pink);
 }
 
+.portfolio-task-card {
+  margin-bottom: 0.85rem;
+}
+
+.portfolio-task-heading {
+  margin: 0;
+  color: var(--text-main) !important;
+  line-height: 1.45;
+}
+
+.portfolio-task-heading span {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
 .portfolio-modal-bullet-list {
   margin: 0.75rem 0 0;
   padding-left: 1.15rem;
@@ -2599,12 +2769,33 @@ html.has-site-cursor * {
   line-height: 1.65;
 }
 
+.portfolio-design-report-link {
+  margin: 0.85rem 0 0;
+}
+
+.portfolio-design-report-link button {
+  appearance: none;
+  border: 0;
+  padding: 0;
+  background: none;
+  color: var(--cyan);
+  font: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
 .portfolio-motivation-list {
   margin-top: 0.65rem;
 }
 
 .isp-modeling-panel {
   margin-top: 0.35rem;
+}
+
+.isp-modeling-design-card {
+  margin-top: 1.15rem;
+  margin-bottom: 0;
 }
 
 .isp-modeling-intro {
@@ -3747,14 +3938,59 @@ html.has-site-cursor * {
   }
 
   .hero-actions {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    width: 100%;
-    max-width: 28rem;
+    grid-template-columns: repeat(3, max-content);
+    justify-content: start;
+    width: fit-content;
+    max-width: 100%;
+    margin-inline: 0;
   }
 
   .hero-actions .cta-button {
+    width: 100%;
+    max-width: none;
     min-height: 44px;
-    height: auto;
+    height: 100%;
+  }
+}
+
+@container hero-intro (max-width: 38rem) {
+  .hero-actions {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-action-col,
+  .hero-action-col-wide,
+  .hero-action-col-mid {
+    width: 100%;
+  }
+
+  .hero-actions .cta-button {
+    padding-inline: 0.4rem;
+    font-size: 0.62rem;
+    letter-spacing: 0.02em;
+    text-wrap: balance;
+    white-space: normal;
+    overflow-wrap: break-word;
+  }
+
+  .hero-actions .cta-button.hero-action-project {
+    min-width: 0;
+    width: 100%;
+    padding-inline: 0.55rem;
+  }
+}
+
+@container hero-intro (max-width: 28rem) {
+  .hero-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@container hero-intro (max-width: 17rem) {
+  .hero-actions {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
