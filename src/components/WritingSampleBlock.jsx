@@ -27,10 +27,17 @@ const SAMPLES = [
     file: "/docs/writing-sample/AI_Regression_assignment_CUI_Congwen.pdf",
   },
   {
+    id: "xiaomi-porter",
+    kicker: "COMP3116 Data Driven Business Management · course assignment",
+    title: "Analysis of Data Strategy Supporting Porter's Generic Strategies at Xiaomi",
+    line: "Examines how Xiaomi's cost leadership, ecosystem-based differentiation, and potential focus strategies can be supported through data-driven decision making.",
+    file: "/docs/writing-sample/COMP3116_Xiaomi_Porter_Data_Strategy_CUI_Congwen.pdf",
+  },
+  {
     id: "isp-design",
-    kicker: "COMP3114 · group assignment",
+    kicker: "COMP3114 Information System Project · group assignment",
     title: "Information System Project: System Design",
-    line: "COMP3114 group assignment. This PDF is an excerpt of the design chapter I was responsible for, sections 4.1 to 4.4.",
+    line: "This PDF is just the third chapter of the document I was responsible for, sections 4.1 to 4.4.",
     file: ISP_DESIGN_FILE,
   },
 ];
